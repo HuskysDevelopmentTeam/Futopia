@@ -1,0 +1,6 @@
+{
+	"parent": "futopia:item/tool/bronze/bronze_fishing_rod",
+	"textures": {
+		"layer0": "futopia:items/tool/bronze/bronze_fishing_rod_cast"
+	}
+}

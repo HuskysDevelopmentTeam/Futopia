@@ -1,0 +1,6 @@
+{
+	"parent": "futopia:item/tool/bronze/bronze_bow",
+	"textures": {
+		"layer0": "futopia:items/tool/bronze/bronze_bow_0"
+	}
+}

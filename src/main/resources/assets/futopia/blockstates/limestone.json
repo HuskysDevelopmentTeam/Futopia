@@ -1,0 +1,52 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"normal": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_normal"
+				}
+			},
+			"paver": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_pavor"
+				}
+			},
+			"brick": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_brick"
+				}
+			},
+			"fancy": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_fancy"
+				}
+			},
+			"brick_small": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_brick_small"
+				}
+			},
+			"dirty": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/limestone/limestone_dirty"
+				}
+			},
+			"pillar": {
+				"textures": {
+					"down": "futopia:blocks/worldgen/limestone/limestone_pillar_bottom",
+					"up": "futopia:blocks/worldgen/limestone/limestone_pillar_top",
+					"north": "futopia:blocks/worldgen/limestone/limestone_pillar_side",
+					"south": "futopia:blocks/worldgen/limestone/limestone_pillar_side",
+					"west": "futopia:blocks/worldgen/limestone/limestone_pillar_side",
+					"east": "futopia:blocks/worldgen/limestone/limestone_pillar_side",
+					"particle": "futopia:blocks/worldgen/limestone/limestone_pillar_side"
+				}
+			}
+		}
+	}
+}

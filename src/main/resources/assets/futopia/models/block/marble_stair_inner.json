@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures":
+  {
+    "bottom": "futopia:blocks/worldgen/marble/marble_normal",
+    "top": "futopia:blocks/worldgen/marble/marble_normal",
+    "side": "futopia:blocks/worldgen/marble/marble_normal"
+  }
+}

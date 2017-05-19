@@ -1,0 +1,14 @@
+{
+	"parent":"futopia:item/tool/shield",
+	"textures": {
+		"layer0":"futopia:items/tool/bronze/bronze_shield"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"blocking": 1
+			},
+			"model": "futopia:item/tool/bronze/bronze_shield_blocking"
+		}
+	]
+}

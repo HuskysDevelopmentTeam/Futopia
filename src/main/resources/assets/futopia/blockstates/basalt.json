@@ -1,0 +1,56 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"normal": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_normal"
+				}
+			},
+			"cobble": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_cobble"
+				}
+			},
+			"paver": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_paver2"
+				}
+			},
+			"brick": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick"
+				}
+			},
+			"fancy": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_fancy"
+				}
+			},
+			"cracked_lava": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_cracked_lava"
+				}
+			},
+			"brick_cracked": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick_cracked"
+				}
+			},
+			"brick_small": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick_small"
+				}
+			},
+			"tile": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_tile"
+				}
+			}
+		}
+	}
+}
