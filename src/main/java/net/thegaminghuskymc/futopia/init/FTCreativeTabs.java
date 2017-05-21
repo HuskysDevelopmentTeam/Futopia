@@ -20,7 +20,7 @@ public class FTCreativeTabs {
     static {
         blocks = new SimpleCreativeTab("blocks", "futopia:storage", 0);
 
-        worldgen = new SimpleCreativeTab("worldgen", "futopia:ore");
+        worldgen = new SimpleCreativeTab("worldgen", "futopia:ore", 0);
 
         decoration = new SimpleCreativeTab("decoration", "futopia:asphalt");
 

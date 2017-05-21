@@ -16,6 +16,7 @@ public class BlockAsphalt extends BlockFutopia {
 
     public BlockAsphalt() {
         super("asphalt", Material.ROCK);
+        setRegistryName("asphalt");
         setCreativeTab(FTCreativeTabs.decoration);
     }
 
