@@ -1,7 +1,5 @@
 package net.thegaminghuskymc.futopia.block.machine;
 
-import mcp.mobius.waila.api.IWailaConfigHandler;
-import mcp.mobius.waila.api.IWailaDataAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -23,7 +21,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.client.render.CompressorRenderer;
-import net.thegaminghuskymc.futopia.compatibilities.waila.IWailaUser;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.item.block.ItemBlockCompressor;
 import net.thegaminghuskymc.futopia.items.ores.ItemAlloyIngot;
@@ -34,7 +31,7 @@ import net.thegaminghuskymc.futopia.tile.tier1.TileCompressor;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockCompressor extends Block implements ITileEntityProvider, IWailaUser {
+public class BlockCompressor extends Block {
 
     public BlockCompressor() {
         super(Material.IRON);
@@ -114,21 +111,4 @@ public class BlockCompressor extends Block implements ITileEntityProvider, IWail
         ClientRegistry.bindTileEntitySpecialRenderer(TileCompressor.class, new CompressorRenderer());
     }
 
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileCompressor();
-    }
-
-    @Override
-    public List<String> getWailaBody(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        TileCompressor te = getTE(accessor.getWorld(), accessor.getPosition());
-
-        if (te instanceof TileCompressor) {
-            ItemStack item = te.getStack();
-            if (te.getStack() != null) {
-                currenttip.add("Contains: " + item.getDisplayName());
-            }
-        }
-        return currenttip;
-    }
 }

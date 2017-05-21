@@ -17,7 +17,7 @@ public class ItemCrushed extends Item implements IItemColor {
     public ItemCrushed() {
         setUnlocalizedName("crushed");
         setRegistryName("crushed");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }

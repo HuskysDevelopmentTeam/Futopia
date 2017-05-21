@@ -14,8 +14,8 @@ public class ItemBasePlate extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBasePlate() {
-        super("plate", EnumMaterialType.toStringArray());
-        setCreativeTab(FTCreativeTabs.items);
+        super("plate", EnumMaterialType.METADATA_LOOKUP.toString());
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

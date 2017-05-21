@@ -21,7 +21,7 @@ public class ItemFoodHelperFutopia extends ItemFoodBase {
     @Override
     @SideOnly(Side.CLIENT)
     public CreativeTabs getCreativeTab() {
-        return FTCreativeTabs.items;
+        return FTCreativeTabs.materials;
     }
 
     @Override

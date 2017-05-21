@@ -1,16 +1,11 @@
 package net.thegaminghuskymc.futopia.init;
 
 import cofh.core.util.core.IInitializer;
-import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.block.normal.BlockClearGlass;
 import net.thegaminghuskymc.futopia.block.normal.BlockCrackedGlass;
 import net.thegaminghuskymc.futopia.block.normal.BlockDirtyGlass;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockBasalt;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockLimestone;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockMarble;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockMeteor;
-import slimeknights.tconstruct.common.TinkerOredict;
+import net.thegaminghuskymc.futopia.block.worldgen.*;
 
 import java.util.ArrayList;
 
@@ -18,21 +13,32 @@ public class TFBlocks {
 
     public static void preInit() {
 
+        blockOre = new BlockOre();
+        blockStorage = new BlockStorage();
+        
         limestone = new BlockLimestone();
         basalt = new BlockBasalt();
         meteor = new BlockMeteor();
         marble = new BlockMarble();
         clearGlass = new BlockClearGlass();
+
 //        crackedGlass = new BlockCrackedGlass();
 //        dirtyGlass = new BlockDirtyGlass();
+
+        initList.add(blockOre);
+        initList.add(blockStorage);
 
         initList.add(limestone);
         initList.add(basalt);
         initList.add(meteor);
         initList.add(marble);
         initList.add(clearGlass);
+
 //        initList.add(crackedGlass);
 //        initList.add(dirtyGlass);
+
+        Futopia.proxy.addIModelRegister(blockOre);
+        Futopia.proxy.addIModelRegister(blockStorage);
 
         Futopia.proxy.addIModelRegister(limestone);
         Futopia.proxy.addIModelRegister(marble);
@@ -63,6 +69,9 @@ public class TFBlocks {
     }
 
     /* REFERENCES */
+    public static BlockOre blockOre;
+    public static BlockStorage blockStorage;
+
     public static BlockMarble marble;
     public static BlockBasalt basalt;
     public static BlockMeteor meteor;

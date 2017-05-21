@@ -14,7 +14,7 @@ public class ItemIronStick extends ItemFutopia {
 
     public ItemIronStick() {
         super("iron_stick");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

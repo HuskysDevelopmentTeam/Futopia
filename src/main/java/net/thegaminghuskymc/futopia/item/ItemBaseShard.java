@@ -13,7 +13,7 @@ public class ItemBaseShard extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBaseShard() {
-        super("shard", EnumMaterialType.toStringArray());
+        super("shard", EnumMaterialType.METADATA_LOOKUP.toString());
     }
 
     @Override

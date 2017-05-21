@@ -14,7 +14,7 @@ public class ItemHammer extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemHammer() {
-        super("hammer", EnumMaterialType.toStringArray());
+        super("hammer", EnumMaterialType.METADATA_LOOKUP.toString());
         setCreativeTab(FTCreativeTabs.tools);
     }
 

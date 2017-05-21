@@ -16,7 +16,7 @@ public class ItemMeteorChunk extends ItemFutopia {
 
     public ItemMeteorChunk() {
         super("meteor_chunk");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

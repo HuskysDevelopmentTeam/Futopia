@@ -18,7 +18,6 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.block.idk.BlockFluidTank;
-import net.thegaminghuskymc.futopia.compatibilities.SimpleCapabilityProvider;
 import net.thegaminghuskymc.futopia.tile.tier1.TileEntityFluidTank;
 
 import java.util.ArrayList;
@@ -69,8 +68,4 @@ public class ItemFluidTank extends ItemBlock {
         subItems.addAll(tankItems);
     }
 
-    @Override
-    public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt) {
-        return new SimpleCapabilityProvider<>(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null, new FluidTank(TileEntityFluidTank.CAPACITY));
-    }
 }

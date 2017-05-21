@@ -1,13 +1,7 @@
 package net.thegaminghuskymc.futopia.init;
 
-import cofh.thermalfoundation.ThermalFoundation;
-import cofh.thermalfoundation.gui.CreativeTabTF;
-import cofh.thermalfoundation.init.TFEquipment.ArmorSet;
-import cofh.thermalfoundation.init.TFEquipment.ToolSet;
-import cofh.thermalfoundation.util.LexiconManager;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.Futopia;
-import net.thegaminghuskymc.futopia.client.CreativeTabFT;
 
 public class TFProps {
 
@@ -21,8 +15,6 @@ public class TFProps {
 	}
 
 	public static void loadComplete() {
-
-		LexiconManager.loadComplete();
 
 		String prefix = "config.futopia.";
 		String[] categoryNames = Futopia.CONFIG2.getCategoryNames().toArray(new String[Futopia.CONFIG2.getCategoryNames().size()]);

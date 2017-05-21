@@ -21,7 +21,7 @@ public class ItemWindowsWasher extends ItemFutopia {
 
     public ItemWindowsWasher() {
         super("windows_washer");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

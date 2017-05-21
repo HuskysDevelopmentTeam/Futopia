@@ -9,7 +9,7 @@
   "credits": "Thanks to my amazing artist •°☆Wufflez☆°• he is the best",
   "logoFile": "assets/futopia/textures/logo.png",
   "dependencies": [
-  	"Forge,cofhcore,ninetaillib,CodeChickenLib"
+  	"Forge,cofhcore,ninetaillib"
   ]
 }
 ]

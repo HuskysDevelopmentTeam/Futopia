@@ -3,13 +3,12 @@ package net.thegaminghuskymc.futopia.item.block;
 import cofh.core.block.ItemBlockCore;
 import cofh.lib.util.helpers.ItemHelper;
 import net.minecraft.block.Block;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.thegaminghuskymc.futopia.network.ClearGlassType;
+import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 
-public class ItemBlockClearGlass extends ItemBlockCore {
+public class ItemBlockStorage extends ItemBlockCore {
 
-	public ItemBlockClearGlass(Block block) {
+	public ItemBlockStorage(Block block) {
 
 		super(block);
 		setHasSubtypes(true);
@@ -19,7 +18,7 @@ public class ItemBlockClearGlass extends ItemBlockCore {
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
 
-		return "tile.clear_glass." + ClearGlassType.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
+		return "tile.storage." + EnumMaterialType.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
 	}
 
 }

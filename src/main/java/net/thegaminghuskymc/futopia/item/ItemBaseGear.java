@@ -14,8 +14,8 @@ public class ItemBaseGear extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBaseGear() {
-        super("gear", EnumMaterialType.toStringArray());
-        setCreativeTab(FTCreativeTabs.items);
+        super("gear", EnumMaterialType.METADATA_LOOKUP.toString());
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

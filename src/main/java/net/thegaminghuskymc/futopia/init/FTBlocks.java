@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.init;
 
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.block.decorativeBlocks.base.BlockFutopiaStair;
 import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeBasic;
@@ -45,6 +46,11 @@ public class FTBlocks {
     }
 
     private static void instantiateBlocks() {
+
+        if(Loader.isModLoaded("ninetaillib")){
+
+        }
+
         projectTable = new BlockProjectTable();
         alloyfurnace = new BlockAlloyFurnace();
 
@@ -52,8 +58,8 @@ public class FTBlocks {
         particle_block = new BlockParticleBlock();
         concrete = new BlockConcrete();
 
-        ores = new BlockBaseOre();
-        storage = new BlockBaseStorage();
+//        ores = new BlockBaseOre();
+//        storage = new BlockBaseStorage();
 
         asphalt = new BlockAsphalt();
 

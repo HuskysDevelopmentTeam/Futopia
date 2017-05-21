@@ -27,6 +27,6 @@ public class ItemFutopia extends ItemBase {
 
     @Override
     public CreativeTabs getCreativeTab() {
-        return FTCreativeTabs.items;
+        return FTCreativeTabs.materials;
     }
 }

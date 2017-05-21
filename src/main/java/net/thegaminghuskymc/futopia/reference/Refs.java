@@ -5,8 +5,8 @@ public class Refs {
     public static final String NAME = "Futopia";
     public static final String MODID = "futopia";
     public static final String RESOURSE_PREFIX = MODID + ":";
-    public static final String VERSION = "0.2.4";
-    public static final String DEPS = "required-after:ninetaillib;required-after:CodeChickenLib;required-after:cofhcore;";
+    public static final String VERSION = "0.2.7";
+    public static final String DEPS = "required-after:ninetaillib;required-after:cofhcore;";
     public static final String MCVERSION = "1.10.2";
 
     public static final String WAILA = "net.thegaminghuskymc.futopia.compatibilities.waila.WailaCompatibility.load";

@@ -13,7 +13,7 @@ public class ItemBaseNugget extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBaseNugget() {
-        super("nugget", EnumMaterialType.toStringArray());
+        super("nugget", EnumMaterialType.METADATA_LOOKUP.toString());
     }
 
     @Override

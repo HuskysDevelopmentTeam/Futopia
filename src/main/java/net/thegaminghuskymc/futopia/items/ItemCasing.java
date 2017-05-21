@@ -17,7 +17,7 @@ public class ItemCasing extends Item implements IItemColor {
     public ItemCasing() {
         setUnlocalizedName("casing");
         setRegistryName("casing");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }

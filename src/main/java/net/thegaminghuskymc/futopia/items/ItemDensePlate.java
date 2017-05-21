@@ -17,7 +17,7 @@ public class ItemDensePlate extends Item implements IItemColor {
     public ItemDensePlate() {
         setUnlocalizedName("denseplate");
         setRegistryName("denseplate");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }

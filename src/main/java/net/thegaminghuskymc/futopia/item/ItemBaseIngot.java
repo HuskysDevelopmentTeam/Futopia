@@ -14,8 +14,8 @@ public class ItemBaseIngot extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBaseIngot() {
-        super("alloy", EnumMaterialType.toStringArray());
-        setCreativeTab(FTCreativeTabs.items);
+        super("alloy", EnumMaterialType.METADATA_LOOKUP.toString());
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

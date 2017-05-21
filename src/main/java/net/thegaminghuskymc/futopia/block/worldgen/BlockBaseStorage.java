@@ -21,7 +21,7 @@ import net.thegaminghuskymc.futopia.reference.Refs;
 
 import java.util.List;
 
-public class BlockBaseStorage extends BlockFutopia implements IMetaBlock {
+public class BlockBaseStorage extends BlockFutopia {
 
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite[] texture;
@@ -47,12 +47,7 @@ public class BlockBaseStorage extends BlockFutopia implements IMetaBlock {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return state.getValue(FutopiaProperties.MATERIALS).getID();
-    }
-
-    @Override
-    public String[] getSubNames() {
-        return EnumMaterialType.toStringArray();
+        return state.getValue(FutopiaProperties.MATERIALS).getMetadata();
     }
 
     @Override

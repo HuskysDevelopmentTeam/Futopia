@@ -18,7 +18,7 @@ public class ItemOrePlate extends ItemBase {
     public ItemOrePlate() {
         super("ores/plate");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.items);
+        this.setCreativeTab(FTCreativeTabs.materials);
         this.setInternalName("ore_plate");
     }
 

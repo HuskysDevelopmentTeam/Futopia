@@ -22,7 +22,7 @@ public class ItemOreNugget extends ItemBase implements IProvideRecipe {
     public ItemOreNugget() {
         super("ores/nugget");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.items);
+        this.setCreativeTab(FTCreativeTabs.materials);
         this.setInternalName("ore_nugget");
     }
 

@@ -18,7 +18,7 @@ public class ItemGear extends ItemBase {
     public ItemGear() {
         super("ores/gears");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.items);
+        this.setCreativeTab(FTCreativeTabs.materials);
         this.setInternalName("gear");
     }
 

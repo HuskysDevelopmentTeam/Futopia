@@ -1,8 +1,9 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.item.EnumRarity;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumMaterialType implements IPropertyProvider {
+public enum EnumMaterialType implements IStringSerializable {
 
     RED("red", 0),
     BLUE("blue", 1),
@@ -13,37 +14,57 @@ public enum EnumMaterialType implements IPropertyProvider {
     BRASS("brass", 6),
     TESSELATION("tesselite", 7);
 
-    private String name;
-    private int ID;
+    public static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];
+    public final int metadata;
+    public final String name;
+    public final int light;
+    public final float hardness;
+    public final float resistance;
+    public final EnumRarity rarity;
 
-    EnumMaterialType(String name, int ID) {
+    EnumMaterialType(String name, int metadata, int light, float hardness, float resistance, EnumRarity rarity) {
+
+        this.metadata = metadata;
         this.name = name;
-        this.ID = ID;
+        this.light = light;
+        this.rarity = rarity;
+        this.hardness = hardness;
+        this.resistance = resistance;
     }
 
-    public static String[] toStringArray() {
-        String[] names = new String[values().length];
+    EnumMaterialType(String name, int metadata) {
 
-        for (int i = 0; i < values().length; i++) {
-            names[i] = values()[i].getName();
-        }
-
-        return names;
+        this(name, metadata, 0, 5.0F, 6.0F, EnumRarity.COMMON);
     }
 
-    @Override
-    public int getID() {
-        return this.ID;
+    public int getMetadata() {
+
+        return this.metadata;
     }
 
     @Override
     public String getName() {
+
         return this.name;
     }
 
-    @Override
-    public String toString() {
-        return this.name;
+    public int getLight() {
+
+        return this.light;
+    }
+
+    public static EnumMaterialType byMetadata(int metadata) {
+
+        if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+            metadata = 0;
+        }
+        return METADATA_LOOKUP[metadata];
+    }
+
+    static {
+        for (EnumMaterialType type : values()) {
+            METADATA_LOOKUP[type.getMetadata()] = type;
+        }
     }
 
 }

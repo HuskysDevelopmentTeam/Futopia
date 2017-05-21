@@ -16,7 +16,7 @@ public class ItemMeteorSpawner extends ItemFutopia {
 
     public ItemMeteorSpawner() {
         super("meteor_spawner");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override

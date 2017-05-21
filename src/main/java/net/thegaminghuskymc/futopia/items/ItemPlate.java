@@ -17,7 +17,7 @@ public class ItemPlate extends Item implements IItemColor {
     public ItemPlate() {
         setUnlocalizedName("plates");
         setRegistryName("plates");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }

@@ -17,7 +17,7 @@ public class ItemPurified extends Item implements IItemColor {
     public ItemPurified() {
         setUnlocalizedName("purified");
         setRegistryName("purified");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }

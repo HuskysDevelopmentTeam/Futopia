@@ -13,7 +13,7 @@ public class ItemBaseDust extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemBaseDust() {
-        super("dust", EnumMaterialType.toStringArray());
+        super("dust", EnumMaterialType.METADATA_LOOKUP.toString());
     }
 
     @Override

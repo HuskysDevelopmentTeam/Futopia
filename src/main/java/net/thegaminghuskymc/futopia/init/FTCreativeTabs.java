@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.init;
 
+import codechicken.lib.gui.SimpleCreativeTab;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
@@ -11,77 +12,25 @@ public class FTCreativeTabs {
     public static CreativeTabs worldgen;
     public static CreativeTabs decoration;
     public static CreativeTabs machines;
-    public static CreativeTabs items;
+    public static CreativeTabs materials;
     public static CreativeTabs tools;
     public static CreativeTabs armor;
     public static CreativeTabs fluids;
 
     static {
-        blocks = new CreativeTabs("blocks") {
+        blocks = new SimpleCreativeTab("blocks", "futopia:storage", 0);
 
-            @SideOnly(Side.CLIENT)
-            public Item getTabIconItem() {
-                return Item.getItemFromBlock(FTBlocks.storage);
-            }
+        worldgen = new SimpleCreativeTab("worldgen", "futopia:ore");
 
-        };
+        decoration = new SimpleCreativeTab("decoration", "futopia:asphalt");
 
-        worldgen = new CreativeTabs("worldgen") {
+        machines = new SimpleCreativeTab("machines", "futopia:particle_block");
 
-            @SideOnly(Side.CLIENT)
-            public Item getTabIconItem() {
-                return Item.getItemFromBlock(FTBlocks.ores);
-            }
+        tools = new SimpleCreativeTab("tools", "futopia:sword_red");
 
-            @Override
-            public boolean isTabInFirstRow() {
-                return true;
-            }
+        armor = new SimpleCreativeTab("armor", "futopia:armor_blue", 0);
 
-        };
-
-        decoration = new CreativeTabs("decoration") {
-            @Override
-            @SideOnly(Side.CLIENT)
-            public Item getTabIconItem() {
-                return Item.getItemFromBlock(FTBlocks.asphalt);
-            }
-        };
-
-        machines = new CreativeTabs("machines") {
-            @Override
-            @SideOnly(Side.CLIENT)
-            public Item getTabIconItem() {
-                return Item.getItemFromBlock(FTBlocks.particle_block);
-            }
-        };
-
-        tools = new CreativeTabs("tools") {
-
-            @Override
-            public Item getTabIconItem() {
-                return FTItems.toolsBlue[3];
-            }
-
-        };
-
-        armor = new CreativeTabs("armor") {
-
-            @Override
-            public Item getTabIconItem() {
-                return FTItems.armorBlue[0];
-            }
-
-        };
-
-        items = new CreativeTabs("futopia_materials") {
-
-            @Override
-            @SideOnly(Side.CLIENT)
-            public Item getTabIconItem() {
-                return FTItems.ingots;
-            }
-        };
+        materials = new SimpleCreativeTab("futopia_materials", "futopia:ingot", 0);
     }
 
 }

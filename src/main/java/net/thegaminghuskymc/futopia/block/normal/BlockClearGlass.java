@@ -8,8 +8,6 @@ import cofh.core.util.core.IInitializer;
 import cofh.lib.util.RayTracer;
 import cofh.lib.util.helpers.ServerHelper;
 import cofh.lib.util.helpers.WrenchHelper;
-import cofh.thermalfoundation.ThermalFoundation;
-import cofh.thermalfoundation.block.ItemBlockGlass;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;

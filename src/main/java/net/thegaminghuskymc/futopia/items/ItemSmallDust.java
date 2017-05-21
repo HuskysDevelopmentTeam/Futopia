@@ -17,7 +17,7 @@ public class ItemSmallDust extends Item implements IItemColor {
     public ItemSmallDust() {
         setUnlocalizedName("smalldust");
         setRegistryName("smalldust");
-        setCreativeTab(FTCreativeTabs.items);
+        setCreativeTab(FTCreativeTabs.materials);
         setHasSubtypes(true);
         GameRegistry.register(this);
     }
