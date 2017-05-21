@@ -6,13 +6,13 @@ import net.thegaminghuskymc.futopia.item.ItemMaterial;
 
 import java.util.ArrayList;
 
-public class TFItems {
+public class OtherItems {
 
     /* REFERENCES */
     public static ItemMaterial itemMaterial;
     private static ArrayList<IInitializer> initList = new ArrayList<>();
 
-    private TFItems() {
+    private OtherItems() {
 
     }
 

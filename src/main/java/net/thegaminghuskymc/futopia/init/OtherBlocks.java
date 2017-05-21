@@ -9,7 +9,7 @@ import net.thegaminghuskymc.futopia.block.worldgen.*;
 
 import java.util.ArrayList;
 
-public class TFBlocks {
+public class OtherBlocks {
 
     public static void preInit() {
 
