@@ -17,7 +17,6 @@ public class BlockElectricalFurnace extends BlockMachineBase {
 
     public BlockElectricalFurnace() {
         super(Refs.ELECTRICALFURNACE_NAME);
-        setRegistryName(Refs.ELECTRICALFURNACE_NAME);
     }
 
     @Override
