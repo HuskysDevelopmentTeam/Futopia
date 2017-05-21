@@ -88,11 +88,11 @@ public class TFProps {
         comment = "If TRUE, Ender devices will be a bit more Cagey year-round.";
         renderStarfieldCage = Futopia.CONFIG_CLIENT.getConfiguration().getBoolean("CageyEnder", category, renderStarfieldCage, comment);
 
-        category = "Interface";
+        /*category = "Interface";
 		boolean armorTabCommon = false;
 		boolean toolTabCommon = false;
 
-		/* CREATIVE TABS */
+		*//* CREATIVE TABS *//*
 		Futopia.tabCommon = new CreativeTabFT();
 
 		if (armorTabCommon) {
@@ -118,7 +118,7 @@ public class TFProps {
 					return ToolSet.INVAR.toolPickaxe;
 				}
 			};
-		}
+		}*/
 	}
 
 	/* INTERFACE */

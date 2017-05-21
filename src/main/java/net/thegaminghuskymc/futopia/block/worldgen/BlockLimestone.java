@@ -39,7 +39,6 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
     public static ItemStack limestoneBrick;
     public static ItemStack limestoneFancy;
     public static ItemStack limestoneBrickSmall;
-    public static ItemStack limestoneDirty;
     public static ItemStack limestonePillar;
 
     public BlockLimestone() {
@@ -53,7 +52,7 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
         setResistance(10.0F);
         setSoundType(SoundType.METAL);
         setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, BlockLimestone.Type.NORMAL));
+        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, BlockLimestone.Type.RAW));
 
         setHarvestLevel("pickaxe", 2);
     }
@@ -117,21 +116,19 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
         itemBlock.setRegistryName(this.getRegistryName());
         GameRegistry.register(itemBlock);
 
-        limestone = new ItemStack(this, 1, BlockLimestone.Type.NORMAL.getMetadata());
+        limestone = new ItemStack(this, 1, BlockLimestone.Type.RAW.getMetadata());
         limestonePaver = new ItemStack(this, 1, BlockLimestone.Type.PAVER.getMetadata());
         limestoneBrick = new ItemStack(this, 1, BlockLimestone.Type.BRICK.getMetadata());
         limestoneFancy = new ItemStack(this, 1, BlockLimestone.Type.FANCY.getMetadata());
         limestoneBrickSmall = new ItemStack(this, 1, BlockLimestone.Type.BRICK_SMALL.getMetadata());
-        limestoneDirty = new ItemStack(this, 1, BlockLimestone.Type.DIRTY.getMetadata());
         limestonePillar = new ItemStack(this, 1, BlockLimestone.Type.PILLAR.getMetadata());
 
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE.getUnlocalizedName(), limestone);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_PAVER.getUnlocalizedName(), limestonePaver);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_BRICK.getUnlocalizedName(), limestoneBrick);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_FANCY.getUnlocalizedName(), limestoneFancy);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_BRICK_SMALL.getUnlocalizedName(), limestoneBrickSmall);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_DIRTY.getUnlocalizedName(), limestoneDirty);
-        registerWithHandlers(RandomThings.ModBlocks.LIMESTONE_PILLAR.getUnlocalizedName(), limestonePillar);
+        registerWithHandlers("blockLimestone", limestone);
+        registerWithHandlers("blockLimestonePaver", limestonePaver);
+        registerWithHandlers("blockLimestoneBrick", limestoneBrick);
+        registerWithHandlers("blockLimestoneFancy", limestoneFancy);
+        registerWithHandlers("blockLimestoneBrickSmall", limestoneBrickSmall);
+        registerWithHandlers("blockLimestonePillar", limestonePillar);
 
         return true;
     }
@@ -148,13 +145,12 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
 
     public enum Type implements IStringSerializable {
 
-        NORMAL(0, "normal"),
+        RAW(0, "raw"),
         PAVER(1, "paver"),
-        DIRTY(2, "dirty"),
-        BRICK(3, "brick"),
-        FANCY(4, "fancy"),
-        BRICK_SMALL(5, "brick_small"),
-        PILLAR(6, "pillar");
+        BRICK(2, "brick"),
+        FANCY(3, "fancy"),
+        BRICK_SMALL(4, "brick_small"),
+        PILLAR(5, "pillar");
 
         private static final BlockLimestone.Type[] METADATA_LOOKUP = new BlockLimestone.Type[values().length];
 

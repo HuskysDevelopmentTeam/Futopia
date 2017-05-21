@@ -1,5 +1,5 @@
 # Basalt
-tile.basalt.normal.name=Basalt
+tile.basalt.raw.name=Basalt
 tile.basalt.brick.name=Basalt Brick
 tile.basalt.brick_cracked.name=Cracked Basalt Brick
 tile.basalt.brick_small.name=Small Basalt Bricks
@@ -15,7 +15,7 @@ tile.meteor.pillar.name=Meteor Pillar
 tile.meteor.bricks.name=Meteor Bricks
 
 # Marble
-tile.marble.normal.name=Marble
+tile.marble.raw.name=Marble
 tile.marble.brick.name=Marble Brick
 tile.marble.brick_small.name=Small Marble Bricks
 tile.marble.fancy.name=Chiseled Marble Brick
@@ -24,7 +24,7 @@ tile.marble.pillar.name=Marble Pillar
 tile.marble.paver.name=Marble Paver
 
 # Limestone
-tile.limestone.normal.name=Limestone
+tile.limestone.raw.name=Limestone
 tile.limestone.brick.name=Limestone Brick
 tile.limestone.brick_small.name=Small Limestone Bricks
 tile.limestone.fancy.name=Chiseled Limestone Brick
@@ -33,15 +33,6 @@ tile.limestone.pillar.name=Limestone Pillar
 tile.limestone.paver.name=Limestone Paver
 
 # Concrete
-tile.concrete_test.normal.name=Concrete
-tile.concrete_test.arranged_brick.name=Concrete Arraged Bricks
-tile.concrete_test.brick.name=Concrete Bricks
-tile.concrete_test.brick_dark.name=Concrete Bricks Dark
-tile.concrete_test.fanzy_brick.name=Concrete Fancy Bricks
-tile.concrete_test.old_squares.name=Concrete Old Squares
-tile.concrete_test.rocks.name=Concrete Rocks
-tile.concrete_test.small_bricks.name=Concrete Small Bricks
-
 tile.futopia.concrete.normal.name=Concrete
 tile.futopia.concrete.arranged_brick.name=Concrete Arraged Bricks
 tile.futopia.concrete.brick.name=Concrete Bricks

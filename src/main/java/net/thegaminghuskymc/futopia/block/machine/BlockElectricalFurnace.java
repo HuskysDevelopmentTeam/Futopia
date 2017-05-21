@@ -29,8 +29,8 @@ public class BlockElectricalFurnace extends BlockMachineBase {
     public void registerBlockIcons(IIconRegistrar registrar) {
         this.texture = new TextureAtlasSprite[3];
         this.texture[0] = registrar.registerIcon(Refs.MODID + ":blocks/machines/electrical_furnace/electrical_furnace_side");
-        this.texture[1] = registrar.registerIcon(Refs.MODID + ":blocks/machines/electrical_furnace/electrical_furnace_off");
-        this.texture[2] = registrar.registerIcon(Refs.MODID + ":blocks/machines/electrical_furnace/electrical_furnace_on");
+        this.texture[1] = registrar.registerIcon(Refs.MODID + ":blocks/machines/electrical_furnace/electrical_furnace_front_off");
+        this.texture[2] = registrar.registerIcon(Refs.MODID + ":blocks/machines/electrical_furnace/electrical_furnace_front_on");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class BlockElectricalFurnace extends BlockMachineBase {
             case 1:
                 return this.texture[0];
             case 2:
-                return this.texture[2];
+                return this.texture[1];
             case 3:
                 return this.texture[0];
             case 4:

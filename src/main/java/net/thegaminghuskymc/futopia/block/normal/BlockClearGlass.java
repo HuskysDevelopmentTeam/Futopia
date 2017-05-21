@@ -169,13 +169,11 @@ public class BlockClearGlass extends BlockCore implements IDismantleable, IIniti
 	@Override
 	@SideOnly (Side.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
-
-		return BlockRenderLayer.CUTOUT;
+		return BlockRenderLayer.TRANSLUCENT;
 	}
 
 	@Override
 	public float[] getBeaconColorMultiplier(IBlockState state, World world, BlockPos pos, BlockPos beaconPos) {
-
 		return ClearGlassType.byMetadata(state.getBlock().getMetaFromState(state)).beaconMult;
 	}
 

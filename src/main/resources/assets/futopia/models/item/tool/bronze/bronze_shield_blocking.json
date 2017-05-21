@@ -1,6 +1,0 @@
-{
-	"parent":"futopia:item/tool/shield_blocking",
-	"textures": {
-		"layer0":"futopia:items/tool/bronze/bronze_shield"
-	}
-}

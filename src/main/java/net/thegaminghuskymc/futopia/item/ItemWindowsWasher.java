@@ -27,7 +27,7 @@ public class ItemWindowsWasher extends ItemFutopia {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegistrar registrar) {
-        this.texture = registrar.registerIcon(Refs.MODID + ":items/windows_washer");
+        this.texture = registrar.registerIcon(Refs.MODID + ":items/windows_washer_orange");
     }
 
     @Override

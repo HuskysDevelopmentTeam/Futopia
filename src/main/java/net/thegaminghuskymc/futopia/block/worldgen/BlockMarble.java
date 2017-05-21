@@ -56,7 +56,7 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
         setHardness(5.0F);
         setResistance(10.0F);
         setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
+        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
 
         setHarvestLevel("pickaxe", 2);
     }
@@ -129,7 +129,7 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
         itemBlock.setRegistryName(this.getRegistryName());
         GameRegistry.register(itemBlock);
 
-        marble = new ItemStack(this, 1, Type.NORMAL.getMetadata());
+        marble = new ItemStack(this, 1, Type.RAW.getMetadata());
         marblePaver = new ItemStack(this, 1, Type.PAVER.getMetadata());
         marbleBrick = new ItemStack(this, 1, Type.BRICK.getMetadata());
         marbleFancy = new ItemStack(this, 1, Type.FANCY.getMetadata());
@@ -137,13 +137,13 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
         marbleTile = new ItemStack(this, 1, Type.TILE.getMetadata());
         marblePillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
 
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE.getUnlocalizedName(), marble);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_PAVER.getUnlocalizedName(), marblePaver);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_BRICK.getUnlocalizedName(), marbleBrick);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_FANCY.getUnlocalizedName(), marbleFancy);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_BRICK_SMALL.getUnlocalizedName(), marbleBrickSmall);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_TILE.getUnlocalizedName(), marbleTile);
-        registerWithHandlers(RandomThings.ModBlocks.MARBLE_PILLAR.getUnlocalizedName(), marblePillar);
+        registerWithHandlers("blockMarble", marble);
+        registerWithHandlers("blockMarblePaver", marblePaver);
+        registerWithHandlers("blockMarbleBrick", marbleBrick);
+        registerWithHandlers("blockMarbleFancy", marbleFancy);
+        registerWithHandlers("blockMarbleBrickSmall", marbleBrickSmall);
+        registerWithHandlers("blockMarbleTile", marbleTile);
+        registerWithHandlers("blockMarblePillar", marblePillar);
 
         return true;
     }
@@ -160,7 +160,7 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
 
     public enum Type implements IStringSerializable {
 
-        NORMAL(0, "normal"),
+        RAW(0, "raw"),
         PAVER(1, "paver"),
         BRICK(2, "brick"),
         FANCY(3, "fancy"),

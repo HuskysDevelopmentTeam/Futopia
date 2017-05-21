@@ -23,24 +23,24 @@ public class TFBlocks {
         meteor = new BlockMeteor();
         marble = new BlockMarble();
         clearGlass = new BlockClearGlass();
-        crackedGlass = new BlockCrackedGlass();
-        dirtyGlass = new BlockDirtyGlass();
+//        crackedGlass = new BlockCrackedGlass();
+//        dirtyGlass = new BlockDirtyGlass();
 
         initList.add(limestone);
         initList.add(basalt);
         initList.add(meteor);
         initList.add(marble);
         initList.add(clearGlass);
-        initList.add(crackedGlass);
-        initList.add(dirtyGlass);
+//        initList.add(crackedGlass);
+//        initList.add(dirtyGlass);
 
         Futopia.proxy.addIModelRegister(limestone);
         Futopia.proxy.addIModelRegister(marble);
         Futopia.proxy.addIModelRegister(basalt);
         Futopia.proxy.addIModelRegister(meteor);
         Futopia.proxy.addIModelRegister(clearGlass);
-        Futopia.proxy.addIModelRegister(crackedGlass);
-        Futopia.proxy.addIModelRegister(dirtyGlass);
+//        Futopia.proxy.addIModelRegister(crackedGlass);
+//        Futopia.proxy.addIModelRegister(dirtyGlass);
 
         for (IInitializer init : initList) {
             init.preInit();

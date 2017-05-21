@@ -125,9 +125,9 @@ public class BlockMeteor extends BlockCore implements IInitializer, IModelRegist
         meteorPillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
         meteorBricks = new ItemStack(this, 1, Type.BRICKS.getMetadata());
 
-        registerWithHandlers(RandomThings.ModBlocks.METEOR.getUnlocalizedName(), meteor);
-        registerWithHandlers(RandomThings.ModBlocks.METEOR.getUnlocalizedName(), meteorPillar);
-        registerWithHandlers(RandomThings.ModBlocks.METEOR.getUnlocalizedName(), meteorBricks);
+        registerWithHandlers("blockMeteor", meteor);
+        registerWithHandlers("blockMeteorPillar", meteorPillar);
+        registerWithHandlers("blockMeteorBricks", meteorBricks);
 
         return true;
     }

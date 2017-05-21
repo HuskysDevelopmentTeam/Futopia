@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures":
-  {
-    "bottom": "futopia:blocks/worldgen/marble/marble_normal",
-    "top": "futopia:blocks/worldgen/marble/marble_normal",
-    "side": "futopia:blocks/worldgen/marble/marble_normal"
-  }
-}

@@ -48,7 +48,7 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         setCreativeTab(FTCreativeTabs.worldgen);
 
         setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
+        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
     }
 
     @Override
@@ -113,7 +113,7 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         itemBlock.setRegistryName(this.getRegistryName());
         GameRegistry.register(itemBlock);
 
-        basalt = new ItemStack(this, 1, Type.NORMAL.getMetadata());
+        basalt = new ItemStack(this, 1, Type.RAW.getMetadata());
         basaltCobble = new ItemStack(this, 1, Type.COBBLE.getMetadata());
         basaltPaver = new ItemStack(this, 1, Type.PAVER.getMetadata());
         basaltBrick = new ItemStack(this, 1, Type.BRICK.getMetadata());
@@ -123,15 +123,15 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         basaltBrickSmall = new ItemStack(this, 1, Type.BRICK_SMALL.getMetadata());
         basaltTile = new ItemStack(this, 1, Type.TILE.getMetadata());
 
-        registerWithHandlers(RandomThings.ModBlocks.BASALT.getUnlocalizedName(), basalt);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_COBBLE.getUnlocalizedName(), basaltCobble);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_PAVER.getUnlocalizedName(), basaltPaver);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_BRICK.getUnlocalizedName(), basaltBrick);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_FANCY.getUnlocalizedName(), basaltFancy);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_CRACKED_LAVA.getUnlocalizedName(), basaltCrackedLava);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_BRICK_CRACKED.getUnlocalizedName(), basaltBrickCracked);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_BRICK_SMALL.getUnlocalizedName(), basaltBrickSmall);
-        registerWithHandlers(RandomThings.ModBlocks.BASALT_TILE.getUnlocalizedName(), basaltTile);
+        registerWithHandlers("blockBasalt", basalt);
+        registerWithHandlers("blockBasaltCobble", basaltCobble);
+        registerWithHandlers("blockBasaltPaver", basaltPaver);
+        registerWithHandlers("blockBasaltBrick", basaltBrick);
+        registerWithHandlers("blockBasaltFancy", basaltFancy);
+        registerWithHandlers("blockBasaltCrackedLava", basaltCrackedLava);
+        registerWithHandlers("blockBasaltBrickCracked", basaltBrickCracked);
+        registerWithHandlers("blockBasaltBrickSmall", basaltBrickSmall);
+        registerWithHandlers("blockBasaltTile", basaltTile);
 
         return true;
     }
@@ -150,7 +150,7 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
     public enum Type implements IStringSerializable {
 
         // @formatter:off
-        NORMAL(0, "normal"),
+        RAW(0, "raw"),
         COBBLE(1, "cobble"),
         PAVER(2, "paver"),
         BRICK(3, "brick"),

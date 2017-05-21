@@ -6,44 +6,44 @@
 	},
 	"variants": {
 		"type": {
-			"normal": {
+			"raw": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_normal"
+					"all": "futopia:blocks/worldgen/marble/new/marble_raw"
 				}
 			},
 			"paver": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_paver"
+					"all": "futopia:blocks/worldgen/marble/new/marble_paver"
 				}
 			},
 			"brick": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_brick"
+					"all": "futopia:blocks/worldgen/marble/new/marble_brick"
 				}
 			},
 			"fancy": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_fancy"
+					"all": "futopia:blocks/worldgen/marble/new/marble_fancy"
 				}
 			},
 			"brick_small": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_brick_small"
+					"all": "futopia:blocks/worldgen/marble/new/marble_brick_small"
 				}
 			},
 			"tile": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/marble/marble_tile"
+					"all": "futopia:blocks/worldgen/marble/new/marble_tile"
 				}
 			},
 			"pillar": {
 				"textures": {
-					"down": "futopia:blocks/worldgen/marble/marble_pillar_top",
-					"up": "futopia:blocks/worldgen/marble/marble_pillar_top",
-					"north": "futopia:blocks/worldgen/marble/marble_pillar_side",
-					"south": "futopia:blocks/worldgen/marble/marble_pillar_side",
-					"west": "futopia:blocks/worldgen/marble/marble_pillar_side",
-					"east": "futopia:blocks/worldgen/marble/marble_pillar_side"
+					"down": "futopia:blocks/worldgen/marble/new/marble_pillar_top",
+					"up": "futopia:blocks/worldgen/marble/new/marble_pillar_top",
+					"north": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"south": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"west": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"east": "futopia:blocks/worldgen/marble/new/marble_pillar_side"
 				}
 			}
 		}
