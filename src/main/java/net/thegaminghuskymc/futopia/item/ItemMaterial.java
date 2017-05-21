@@ -2,8 +2,6 @@ package net.thegaminghuskymc.futopia.item;
 
 import cofh.core.item.ItemMulti;
 import cofh.core.util.core.IInitializer;
-import net.minecraft.init.Items;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.reference.Refs;
@@ -84,7 +82,7 @@ public class ItemMaterial extends ItemMulti implements IInitializer {
     @Override
     public boolean preInit() {
 
-		//Ingots
+        //Ingots
         ingotRed = addOreDictItem(0, "ingotRed");
         ingotBlue = addOreDictItem(1, "ingotBlue");
         ingotPurple = addOreDictItem(2, "ingotPurple");

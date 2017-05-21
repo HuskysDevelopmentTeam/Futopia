@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.block.worldgen;
 
 import com.google.common.collect.Lists;
-import keri.ninetaillib.block.IMetaBlock;
 import keri.ninetaillib.texture.IIconRegistrar;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;

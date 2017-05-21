@@ -2,7 +2,6 @@ package net.thegaminghuskymc.futopia.block.machine;
 
 import cofh.lib.util.helpers.StringHelper;
 import keri.ninetaillib.texture.IIconRegistrar;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

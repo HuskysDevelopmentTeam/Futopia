@@ -60,7 +60,8 @@ public class ClientProxy implements IFutopiaProxy {
     }
 
     @Override
-    public void registerItemRenderer(Item item, int meta, String id) {}
+    public void registerItemRenderer(Item item, int meta, String id) {
+    }
 
     @Override
     public boolean addIModelRegister(IModelRegister modelRegister) {

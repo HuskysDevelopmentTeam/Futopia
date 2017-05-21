@@ -55,7 +55,7 @@ public class FTItems {
 
     private static void instantiateItems() {
 
-        if(Loader.isModLoaded("ninetaillib")){
+        if (Loader.isModLoaded("ninetaillib")) {
             windows_washer = new ItemWindowsWasher();
             meteor_spawner = new ItemMeteorSpawner();
 

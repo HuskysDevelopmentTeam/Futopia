@@ -7,7 +7,6 @@ import codechicken.lib.vec.Cuboid6;
 import cofh.core.render.IModelRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
-import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyDirection;
@@ -20,7 +19,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -37,22 +39,19 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
-
-    public static Cuboid6[] BLOCK_BOUNDS = new Cuboid6[]{
-            new Cuboid6(0.0D, 0.5D, 0.0D, 1.0D, 1.0D, 1.0D),
-            new Cuboid6(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)
-    };
+public class BlockFutopiaStair extends BlockFutopia implements IModelRegister {
 
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     public static final PropertyEnum<EnumHalf> HALF = PropertyEnum.create("half", EnumHalf.class);
     public static final PropertyEnum<EnumShape> SHAPE = PropertyEnum.create("shape", EnumShape.class);
-
+    public static Cuboid6[] BLOCK_BOUNDS = new Cuboid6[]{
+            new Cuboid6(0.0D, 0.5D, 0.0D, 1.0D, 1.0D, 1.0D),
+            new Cuboid6(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)
+    };
     private final Block modelBlock;
     private final IBlockState modelState;
 
-    public BlockFutopiaStair(String name, IBlockState modelState)
-    {
+    public BlockFutopiaStair(String name, IBlockState modelState) {
         super(name, modelState.getBlock().getMaterial(modelState));
         modelBlock = modelState.getBlock();
         this.modelState = modelState;
@@ -62,7 +61,7 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
     }
 
     @Override
-    @SideOnly (Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public IBlockState getExtendedState(IBlockState state, IBlockAccess world, BlockPos pos) {
         return BlockBakery.handleExtendedState((IExtendedBlockState) super.getExtendedState(state, world, pos), world.getTileEntity(pos));
     }
@@ -80,29 +79,26 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         IBlockState iblockstate = getDefaultState().withProperty(HALF, (meta & 4) > 0 ? EnumHalf.TOP : EnumHalf.BOTTOM);
         iblockstate = iblockstate.withProperty(FACING, EnumFacing.getFront(5 - (meta & 3)));
         return iblockstate;
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
         int i = 0;
 
-        if (state.getValue(HALF) == EnumHalf.TOP)
-        {
+        if (state.getValue(HALF) == EnumHalf.TOP) {
             i |= 4;
         }
 
-        i = i | 5 - ((EnumFacing)state.getValue(FACING)).getIndex();
+        i = i | 5 - ((EnumFacing) state.getValue(FACING)).getIndex();
         return i;
     }
 
     @Override
-    @SideOnly (Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public void registerModels() {
 
         StateMap.Builder stateMap = new StateMap.Builder();
@@ -216,71 +212,60 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
     /**
      * Used to determine ambient occlusion and culling when rebuilding chunks for render
      */
-    public boolean isOpaqueCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
-    public boolean isFullCube(IBlockState state)
-    {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
-    {
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         this.modelBlock.randomDisplayTick(stateIn, worldIn, pos, rand);
     }
 
-    public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn)
-    {
+    public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
         this.modelBlock.onBlockClicked(worldIn, pos, playerIn);
     }
 
     /**
      * Called when a player destroys this Block
      */
-    public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
         this.modelBlock.onBlockDestroyedByPlayer(worldIn, pos, state);
     }
 
     @SideOnly(Side.CLIENT)
-    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
         return this.modelState.getPackedLightmapCoords(source, pos);
     }
 
     /**
      * Returns how much this block can resist explosions from the passed in entity.
      */
-    public float getExplosionResistance(Entity exploder)
-    {
+    public float getExplosionResistance(Entity exploder) {
         return this.modelBlock.getExplosionResistance(exploder);
     }
 
     /**
      * How many world ticks before ticking
      */
-    public int tickRate(World worldIn)
-    {
+    public int tickRate(World worldIn) {
         return this.modelBlock.tickRate(worldIn);
     }
 
-    public Vec3d modifyAcceleration(World worldIn, BlockPos pos, Entity entityIn, Vec3d motion)
-    {
+    public Vec3d modifyAcceleration(World worldIn, BlockPos pos, Entity entityIn, Vec3d motion) {
         return this.modelBlock.modifyAcceleration(worldIn, pos, entityIn, motion);
     }
 
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
-    {
+    public BlockRenderLayer getBlockLayer() {
         return this.modelBlock.getBlockLayer();
     }
 
     @SideOnly(Side.CLIENT)
-    public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World worldIn, BlockPos pos)
-    {
+    public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World worldIn, BlockPos pos) {
         return this.modelState.getSelectedBoundingBox(worldIn, pos);
     }
 
@@ -288,26 +273,22 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
      * Returns if this block is collidable. Only used by fire, although stairs return that of the block that the stair
      * is made of (though nobody's going to make fire stairs, right?)
      */
-    public boolean isCollidable()
-    {
+    public boolean isCollidable() {
         return this.modelBlock.isCollidable();
     }
 
-    public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid)
-    {
+    public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid) {
         return this.modelBlock.canCollideCheck(state, hitIfLiquid);
     }
 
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-    {
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
         return this.modelBlock.canPlaceBlockAt(worldIn, pos);
     }
 
     /**
      * Called after the block is set in the Chunk data, but before the Tile Entity is set
      */
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
         this.modelState.neighborChanged(worldIn, pos, Blocks.AIR);
         this.modelBlock.onBlockAdded(worldIn, pos, this.modelState);
     }
@@ -315,50 +296,43 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
     /**
      * Called serverside after this block is replaced with another in Chunk, but before the Tile Entity is updated
      */
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
         this.modelBlock.breakBlock(worldIn, pos, this.modelState);
     }
 
     /**
      * Triggered whenever an entity collides with this block (enters into the block)
      */
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
-    {
+    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
         this.modelBlock.onEntityWalk(worldIn, pos, entityIn);
     }
 
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         this.modelBlock.updateTick(worldIn, pos, state, rand);
     }
 
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         return this.modelBlock.onBlockActivated(worldIn, pos, this.modelState, playerIn, hand, heldItem, EnumFacing.DOWN, 0.0F, 0.0F, 0.0F);
     }
 
     /**
      * Called when this Block is destroyed by an Explosion
      */
-    public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn)
-    {
+    public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
         this.modelBlock.onBlockDestroyedByExplosion(worldIn, pos, explosionIn);
     }
 
     /**
      * Checks if an IBlockState represents a block that is opaque and a full cube.
      */
-    public boolean isFullyOpaque(IBlockState state)
-    {
+    public boolean isFullyOpaque(IBlockState state) {
         return state.getValue(HALF) == EnumHalf.TOP;
     }
 
     /**
      * Get the MapColor for this Block and the given BlockState
      */
-    public MapColor getMapColor(IBlockState state)
-    {
+    public MapColor getMapColor(IBlockState state) {
         return this.modelBlock.getMapColor(this.modelState);
     }
 
@@ -488,7 +462,9 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
         return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
     }
 
-    *//**
+    */
+
+    /**
      * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
      * blockstate.
      *//*
@@ -571,31 +547,26 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
         return false;
     }*/
 
-    public static enum EnumHalf implements IStringSerializable
-    {
+    public static enum EnumHalf implements IStringSerializable {
         TOP("top"),
         BOTTOM("bottom");
 
         private final String name;
 
-        private EnumHalf(String name)
-        {
+        private EnumHalf(String name) {
             this.name = name;
         }
 
-        public String toString()
-        {
+        public String toString() {
             return this.name;
         }
 
-        public String getName()
-        {
+        public String getName() {
             return this.name;
         }
     }
 
-    public static enum EnumShape implements IStringSerializable
-    {
+    public static enum EnumShape implements IStringSerializable {
         STRAIGHT("straight"),
         INNER_LEFT("inner_left"),
         INNER_RIGHT("inner_right"),
@@ -604,18 +575,15 @@ public class BlockFutopiaStair extends BlockFutopia implements IModelRegister{
 
         private final String name;
 
-        private EnumShape(String name)
-        {
+        private EnumShape(String name) {
             this.name = name;
         }
 
-        public String toString()
-        {
+        public String toString() {
             return this.name;
         }
 
-        public String getName()
-        {
+        public String getName() {
             return this.name;
         }
     }

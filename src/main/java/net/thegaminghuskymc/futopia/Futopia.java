@@ -26,14 +26,14 @@ public class Futopia {
 
     public static final GUIHandler GUI_HANDLER = new GUIHandler();
     public static final GuiHandler GUI_HANDLER2 = new GuiHandler();
+    public static final ConfigHandler CONFIG2 = new ConfigHandler(Refs.VERSION);
+    public static final ConfigHandler CONFIG_CLIENT = new ConfigHandler(Refs.VERSION);
     @Instance(Refs.MODID)
     public static Futopia instance;
     @SidedProxy(clientSide = Refs.CLIENT_PROXY, serverSide = Refs.COMMON_PROXY)
     public static IFutopiaProxy proxy;
     public static FutopiaConfig CONFIG;
     public static Logger log = LogManager.getLogger(Refs.NAME);
-    public static final ConfigHandler CONFIG2 = new ConfigHandler(Refs.VERSION);
-    public static final ConfigHandler CONFIG_CLIENT = new ConfigHandler(Refs.VERSION);
 
     static {
         FluidRegistry.enableUniversalBucket();
@@ -46,8 +46,8 @@ public class Futopia {
         CONFIG2.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/common.cfg"), true));
         CONFIG_CLIENT.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/client.cfg"), true));
         FTBlocks.init();
-        TFBlocks.preInit();
-        TFItems.preInit();
+        OtherBlocks.preInit();
+        OtherItems.preInit();
         FTItems.init();
         Recipies.init();
         proxy.preInit(event);
@@ -55,8 +55,8 @@ public class Futopia {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        TFBlocks.initialize();
-        TFItems.initialize();
+        OtherBlocks.initialize();
+        OtherItems.initialize();
         FutopiaOreDictionary.init();
         proxy.init(event);
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
@@ -64,8 +64,8 @@ public class Futopia {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        TFBlocks.postInit();
-        TFItems.postInit();
+        OtherBlocks.postInit();
+        OtherItems.postInit();
         proxy.postInit(event);
     }
 

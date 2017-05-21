@@ -21,7 +21,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.item.block.ItemBlockMeteor;
 import net.thegaminghuskymc.futopia.reference.Refs;
-import net.thegaminghuskymc.futopia.util.RandomThings;
 
 import javax.annotation.Nonnull;
 import java.util.List;

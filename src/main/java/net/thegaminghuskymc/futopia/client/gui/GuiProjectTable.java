@@ -3,7 +3,6 @@ package net.thegaminghuskymc.futopia.client.gui;
 import keri.ninetaillib.util.ResourceAction;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.thegaminghuskymc.futopia.client.container.ContainerPlatePresser;
 import net.thegaminghuskymc.futopia.client.container.ContainerProjectTable;
 import net.thegaminghuskymc.futopia.reference.Refs;
 import net.thegaminghuskymc.futopia.tile.tier1.TileProjectTable;

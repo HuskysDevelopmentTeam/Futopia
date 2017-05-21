@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.block.decorativeBlocks.base;
 
 import net.minecraft.block.state.IBlockState;
-import net.thegaminghuskymc.futopia.init.FTBlocks;
 
 /**
  * Created by TheGamingHuskyMC on 18.05.2017.

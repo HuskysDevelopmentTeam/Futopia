@@ -43,7 +43,7 @@ public class BlockProjectTable extends BlockMachineBase implements IBakeryBlock,
     }
 
     @Override
-    @SideOnly (Side.CLIENT)
+    @SideOnly(Side.CLIENT)
     public IBlockState getExtendedState(IBlockState state, IBlockAccess world, BlockPos pos) {
         return BlockBakery.handleExtendedState((IExtendedBlockState) super.getExtendedState(state, world, pos), world.getTileEntity(pos));
     }

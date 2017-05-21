@@ -11,11 +11,23 @@ import java.util.ArrayList;
 
 public class OtherBlocks {
 
+    /* REFERENCES */
+    public static BlockOre blockOre;
+    public static BlockStorage blockStorage;
+    public static BlockMarble marble;
+    public static BlockBasalt basalt;
+    public static BlockMeteor meteor;
+    public static BlockLimestone limestone;
+    public static BlockClearGlass clearGlass;
+    public static BlockDirtyGlass dirtyGlass;
+    public static BlockCrackedGlass crackedGlass;
+    private static ArrayList<IInitializer> initList = new ArrayList<>();
+
     public static void preInit() {
 
         blockOre = new BlockOre();
         blockStorage = new BlockStorage();
-        
+
         limestone = new BlockLimestone();
         basalt = new BlockBasalt();
         meteor = new BlockMeteor();
@@ -67,17 +79,4 @@ public class OtherBlocks {
         }
         initList.clear();
     }
-
-    /* REFERENCES */
-    public static BlockOre blockOre;
-    public static BlockStorage blockStorage;
-
-    public static BlockMarble marble;
-    public static BlockBasalt basalt;
-    public static BlockMeteor meteor;
-    public static BlockLimestone limestone;
-    public static BlockClearGlass clearGlass;
-    public static BlockDirtyGlass dirtyGlass;
-    public static BlockCrackedGlass crackedGlass;
-    private static ArrayList<IInitializer> initList = new ArrayList<>();
 }

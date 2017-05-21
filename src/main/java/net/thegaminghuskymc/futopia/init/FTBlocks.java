@@ -47,7 +47,7 @@ public class FTBlocks {
 
     private static void instantiateBlocks() {
 
-        if(Loader.isModLoaded("ninetaillib")){
+        if (Loader.isModLoaded("ninetaillib")) {
 
         }
 

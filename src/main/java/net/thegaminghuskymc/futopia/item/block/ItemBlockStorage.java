@@ -8,17 +8,17 @@ import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 
 public class ItemBlockStorage extends ItemBlockCore {
 
-	public ItemBlockStorage(Block block) {
+    public ItemBlockStorage(Block block) {
 
-		super(block);
-		setHasSubtypes(true);
-		setMaxDamage(0);
-	}
+        super(block);
+        setHasSubtypes(true);
+        setMaxDamage(0);
+    }
 
-	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+    @Override
+    public String getUnlocalizedName(ItemStack stack) {
 
-		return "tile.storage." + EnumMaterialType.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
-	}
+        return "tile.storage." + EnumMaterialType.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
+    }
 
 }

@@ -12,7 +12,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -23,7 +22,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.item.block.ItemBlockLimestone;
 import net.thegaminghuskymc.futopia.reference.Refs;
-import net.thegaminghuskymc.futopia.util.RandomThings;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -32,7 +30,7 @@ import static cofh.lib.util.helpers.ItemHelper.registerWithHandlers;
 
 public class BlockLimestone extends BlockCore implements IInitializer, IModelRegister {
 
-    public static final PropertyEnum<BlockLimestone.Type> VARIANT = PropertyEnum.create("type", BlockLimestone.Type.class);
+    public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
     /* REFERENCES */
     public static ItemStack limestone;
     public static ItemStack limestonePaver;
@@ -50,9 +48,8 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
 
         setHardness(5.0F);
         setResistance(10.0F);
-        setSoundType(SoundType.METAL);
         setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, BlockLimestone.Type.RAW));
+        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
 
         setHarvestLevel("pickaxe", 2);
     }

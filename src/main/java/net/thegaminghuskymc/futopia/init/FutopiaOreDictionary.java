@@ -2,16 +2,14 @@ package net.thegaminghuskymc.futopia.init;
 
 import cofh.lib.util.helpers.ItemHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
-import net.thegaminghuskymc.futopia.network.EnumXycroniumColor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.stream.IntStream;
 
 public class FutopiaOreDictionary {
 
-    public static void init(){
+    public static void init() {
         IntStream.range(0, 8).forEach(meta -> ItemHelper.registerWithHandlers("oreFutopia" + StringUtils.capitalize(EnumMaterialType.values()[meta].getName()), new ItemStack(FTBlocks.ores, 1, meta)));
         IntStream.range(0, 8).forEach(meta -> ItemHelper.registerWithHandlers("blockFutopia" + StringUtils.capitalize(EnumMaterialType.values()[meta].getName()), new ItemStack(FTBlocks.storage, 1, meta)));
 

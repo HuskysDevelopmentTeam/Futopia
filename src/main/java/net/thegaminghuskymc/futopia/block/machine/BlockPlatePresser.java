@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.block.machine;
 
 import keri.ninetaillib.texture.IIconRegistrar;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;

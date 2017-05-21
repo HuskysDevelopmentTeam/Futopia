@@ -15,6 +15,13 @@ public enum EnumMaterialType implements IStringSerializable {
     TESSELATION("tesselite", 7);
 
     public static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];
+
+    static {
+        for (EnumMaterialType type : values()) {
+            METADATA_LOOKUP[type.getMetadata()] = type;
+        }
+    }
+
     public final int metadata;
     public final String name;
     public final int light;
@@ -37,6 +44,14 @@ public enum EnumMaterialType implements IStringSerializable {
         this(name, metadata, 0, 5.0F, 6.0F, EnumRarity.COMMON);
     }
 
+    public static EnumMaterialType byMetadata(int metadata) {
+
+        if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+            metadata = 0;
+        }
+        return METADATA_LOOKUP[metadata];
+    }
+
     public int getMetadata() {
 
         return this.metadata;
@@ -51,20 +66,6 @@ public enum EnumMaterialType implements IStringSerializable {
     public int getLight() {
 
         return this.light;
-    }
-
-    public static EnumMaterialType byMetadata(int metadata) {
-
-        if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
-            metadata = 0;
-        }
-        return METADATA_LOOKUP[metadata];
-    }
-
-    static {
-        for (EnumMaterialType type : values()) {
-            METADATA_LOOKUP[type.getMetadata()] = type;
-        }
     }
 
 }

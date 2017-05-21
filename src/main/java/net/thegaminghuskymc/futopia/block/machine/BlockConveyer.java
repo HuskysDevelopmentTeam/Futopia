@@ -6,9 +6,9 @@ import net.thegaminghuskymc.futopia.block.BlockFutopia;
 /**
  * Created by TheGamingHuskyMC on 18.05.2017.
  */
-public class BlockConveyer extends BlockFutopia{
+public class BlockConveyer extends BlockFutopia {
 
-    public BlockConveyer(){
+    public BlockConveyer() {
         super("conveyer_belt", Material.IRON);
     }
 

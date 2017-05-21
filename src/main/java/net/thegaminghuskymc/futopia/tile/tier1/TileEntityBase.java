@@ -12,11 +12,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
-import net.thegaminghuskymc.futopia.util.helpers.TileHelper;
-import net.thegaminghuskymc.futopia.util.interfaces.IOrientable;
-import net.thegaminghuskymc.futopia.util.interfaces.IRotatable;
 
-public class TileEntityBase extends TileEntity implements /*IWailaHeadMessage,*/ IOrientable, IRotatable {
+public class TileEntityBase extends TileEntity {
 
     private String customName;
     private int renderedFragment = 0;
@@ -117,10 +114,6 @@ public class TileEntityBase extends TileEntity implements /*IWailaHeadMessage,*/
 
         if (this.machineItemData != null)
             nbtTagCompound.setTag("MachineItemData", machineItemData);
-
-        if (canBeRotated()) {
-            nbtTagCompound.setInteger("forward", this.forward.ordinal());
-        }
         return nbtTagCompound;
     }
 
@@ -130,10 +123,6 @@ public class TileEntityBase extends TileEntity implements /*IWailaHeadMessage,*/
 
         this.customName = nbtTagCompound.hasKey("CustomName") ? nbtTagCompound.getString("CustomName") : null;
         this.machineItemData = nbtTagCompound.hasKey("MachineItemData") ? nbtTagCompound.getCompoundTag("MachineItemData") : null;
-
-        if (canBeRotated()) {
-            this.forward = EnumFacing.values()[nbtTagCompound.getInteger("forward")];
-        }
     }
 
     public NBTTagCompound getMachineItemData() {
@@ -149,39 +138,5 @@ public class TileEntityBase extends TileEntity implements /*IWailaHeadMessage,*/
             return null;
 
         return worldObj.getBlockState(pos);
-    }
-
-    /*@Override
-    public List<String> getWailaHeadToolTip(ItemStack itemStack, List<String> currentTip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-        if (customName != null)
-            currentTip.add(String.format("%s%s%s", TextFormatting.BLUE, TextFormatting.ITALIC, customName));
-
-        return currentTip;
-    }*/
-
-    @Override
-    public boolean canBeRotated() {
-        return false;
-    }
-
-    @Override
-    public EnumFacing getForward() {
-        return forward;
-    }
-
-    @Override
-    public void setOrientation(EnumFacing forward) {
-        this.forward = forward;
-        markDirty();
-        markForUpdate();
-    }
-
-    public void dropItems() {
-        TileHelper.DropItems(this);
-    }
-
-    @Override
-    public EnumFacing getDirection() {
-        return getForward();
     }
 }

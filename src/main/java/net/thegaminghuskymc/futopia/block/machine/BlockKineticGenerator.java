@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.block.machine;
 
 import keri.ninetaillib.texture.IIconRegistrar;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

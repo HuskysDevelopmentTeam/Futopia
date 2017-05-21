@@ -16,7 +16,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.relauncher.Side;
-import net.thegaminghuskymc.futopia.util.NBTNames;
 
 /**
  * @author MineMaarten
@@ -39,14 +38,12 @@ public class TileProjectTable extends TileEntityInventory implements IFluidHandl
     @Override
     public void readFromNBT(NBTTagCompound tag) {
         super.readFromNBT(tag);
-        this.orientation = EnumFacing.getFront(tag.getInteger(NBTNames.ORIENTATION));
         this.tankRedstone.readFromNBT(tag.getCompoundTag("tank_redstone"));
     }
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound tag) {
         super.writeToNBT(tag);
-        tag.setInteger(NBTNames.ORIENTATION, this.orientation.getIndex());
         tag.setTag("tank_redstone", this.tankRedstone.writeToNBT(new NBTTagCompound()));
         return tag;
     }
