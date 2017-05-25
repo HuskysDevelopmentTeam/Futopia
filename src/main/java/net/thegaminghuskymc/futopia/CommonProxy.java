@@ -15,7 +15,7 @@ public class CommonProxy implements IFutopiaProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
-        OBJLoader.INSTANCE.addDomain(Refs.MODID);
+
     }
 
     @Override

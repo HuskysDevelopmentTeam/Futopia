@@ -17,7 +17,7 @@ public class ItemSaw extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemSaw() {
-        super("saw", EnumMaterialType.METADATA_LOOKUP.toString());
+        super("saw", EnumMaterialType.toStringArray());
         setCreativeTab(FTCreativeTabs.tools);
     }
 

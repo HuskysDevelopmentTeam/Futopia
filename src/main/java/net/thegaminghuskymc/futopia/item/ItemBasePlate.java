@@ -10,26 +10,23 @@ import net.thegaminghuskymc.futopia.reference.Refs;
 
 public class ItemBasePlate extends ItemFutopia {
 
-    @SideOnly(Side.CLIENT)
     private TextureAtlasSprite[] texture;
 
     public ItemBasePlate() {
-        super("plate", EnumMaterialType.METADATA_LOOKUP.toString());
+        super("plate", EnumMaterialType.toStringArray());
         setCreativeTab(FTCreativeTabs.materials);
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegistrar registrar) {
         this.texture = new TextureAtlasSprite[EnumMaterialType.values().length];
 
         for (int i = 0; i < EnumMaterialType.values().length; i++) {
-            this.texture[i] = registrar.registerIcon(Refs.MODID + ":items/resource/plate_" + EnumMaterialType.values()[i].getName());
+            this.texture[i] = registrar.registerIcon(Refs.MODID + ":items/material/plate_" + EnumMaterialType.values()[i].getName());
         }
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public TextureAtlasSprite getIcon(int meta) {
         return this.texture[meta];
     }

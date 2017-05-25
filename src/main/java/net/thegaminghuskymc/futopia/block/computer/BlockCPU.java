@@ -30,6 +30,7 @@ public class BlockCPU extends BlockContainerBase {
 
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (tileEntity instanceof TileCPU) {
+
         }
     }
 

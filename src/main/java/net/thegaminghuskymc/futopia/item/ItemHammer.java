@@ -2,6 +2,14 @@ package net.thegaminghuskymc.futopia.item;
 
 import keri.ninetaillib.texture.IIconRegistrar;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
@@ -14,7 +22,7 @@ public class ItemHammer extends ItemFutopia {
     private TextureAtlasSprite[] texture;
 
     public ItemHammer() {
-        super("hammer", EnumMaterialType.METADATA_LOOKUP.toString());
+        super("hammer", EnumMaterialType.toStringArray());
         setCreativeTab(FTCreativeTabs.tools);
     }
 
@@ -26,6 +34,15 @@ public class ItemHammer extends ItemFutopia {
         for (int i = 0; i < EnumMaterialType.values().length; i++) {
             this.texture[i] = registrar.registerIcon(Refs.MODID + ":items/tool/hammer_" + EnumMaterialType.values()[i].getName());
         }
+    }
+
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+
+        if(playerIn.isGlowing())
+            playerIn.addExperience(100);
+
+        return ActionResult.newResult(EnumActionResult.PASS, itemStackIn);
     }
 
     @Override

@@ -26,6 +26,8 @@ public class FTItems {
 
     public static ItemIronStick ironStick;
 
+    public static ItemStele stele;
+
     public static Item[] toolsBlue;
     public static Item[] toolsGreen;
     public static Item[] toolsRed;
@@ -61,12 +63,14 @@ public class FTItems {
 
             ironStick = new ItemIronStick();
 
-            /*nuggets = new ItemBaseNugget();
+            nuggets = new ItemBaseNugget();
             ingots = new ItemBaseIngot();
             dusts = new ItemBaseDust();
             plates = new ItemBasePlate();
             gears = new ItemBaseGear();
-            shards = new ItemBaseShard();*/
+            shards = new ItemBaseShard();
+
+            stele = new ItemStele();
 
             saw = new ItemSaw();
             hammer = new ItemHammer();

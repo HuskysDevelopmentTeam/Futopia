@@ -12,8 +12,6 @@ import java.util.ArrayList;
 public class OtherBlocks {
 
     /* REFERENCES */
-    public static BlockOre blockOre;
-    public static BlockStorage blockStorage;
     public static BlockMarble marble;
     public static BlockBasalt basalt;
     public static BlockMeteor meteor;
@@ -25,32 +23,21 @@ public class OtherBlocks {
 
     public static void preInit() {
 
-        blockOre = new BlockOre();
-        blockStorage = new BlockStorage();
-
         limestone = new BlockLimestone();
         basalt = new BlockBasalt();
         meteor = new BlockMeteor();
         marble = new BlockMarble();
         clearGlass = new BlockClearGlass();
-
 //        crackedGlass = new BlockCrackedGlass();
 //        dirtyGlass = new BlockDirtyGlass();
-
-        initList.add(blockOre);
-        initList.add(blockStorage);
 
         initList.add(limestone);
         initList.add(basalt);
         initList.add(meteor);
         initList.add(marble);
         initList.add(clearGlass);
-
 //        initList.add(crackedGlass);
 //        initList.add(dirtyGlass);
-
-        Futopia.proxy.addIModelRegister(blockOre);
-        Futopia.proxy.addIModelRegister(blockStorage);
 
         Futopia.proxy.addIModelRegister(limestone);
         Futopia.proxy.addIModelRegister(marble);

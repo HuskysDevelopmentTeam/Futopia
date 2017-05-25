@@ -2,12 +2,16 @@ package net.thegaminghuskymc.futopia.block.machine;
 
 import keri.ninetaillib.texture.IIconRegistrar;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.block.BlockMachineBase;
 import net.thegaminghuskymc.futopia.reference.Refs;
-import net.thegaminghuskymc.futopia.tile.tier1.TileAlloyFurnace;
+import net.thegaminghuskymc.futopia.tile.tier1.TileElectricalFurnace;
+
+import java.util.List;
 
 public class BlockElectricalFurnace extends BlockMachineBase {
 
@@ -19,8 +23,8 @@ public class BlockElectricalFurnace extends BlockMachineBase {
     }
 
     @Override
-    public TileAlloyFurnace createNewTileEntity(World world, int meta) {
-        return new TileAlloyFurnace();
+    public TileElectricalFurnace createNewTileEntity(World world, int meta) {
+        return new TileElectricalFurnace();
     }
 
     @Override

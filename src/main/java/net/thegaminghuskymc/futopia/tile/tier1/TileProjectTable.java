@@ -17,9 +17,6 @@ import net.minecraft.util.ITickable;
 import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * @author MineMaarten
- */
 public class TileProjectTable extends TileEntityInventory implements IFluidHandler, ITickable, INetworkTile {
 
     private EnumFacing orientation = EnumFacing.NORTH;

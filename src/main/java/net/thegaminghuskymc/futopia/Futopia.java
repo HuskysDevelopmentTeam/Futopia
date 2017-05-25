@@ -2,6 +2,7 @@ package net.thegaminghuskymc.futopia;
 
 import cofh.core.init.CoreProps;
 import cofh.core.util.ConfigHandler;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.thegaminghuskymc.futopia.client.GuiHandler;
 import net.thegaminghuskymc.futopia.client.gui.GUIHandler;
 import net.thegaminghuskymc.futopia.init.*;
+import net.thegaminghuskymc.futopia.loaders.BlockLoader;
 import net.thegaminghuskymc.futopia.reference.Refs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,12 +44,15 @@ public class Futopia {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        OBJLoader.INSTANCE.addDomain(Refs.MODID);
         CONFIG = new FutopiaConfig(event);
         CONFIG2.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/common.cfg"), true));
         CONFIG_CLIENT.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/client.cfg"), true));
         FTBlocks.init();
+        BlockLoader.loadBlocks();
+        BlockLoader.initModels();
         OtherBlocks.preInit();
-        OtherItems.preInit();
+//        OtherItems.preInit();
         FTItems.init();
         Recipies.init();
         proxy.preInit(event);
@@ -56,7 +61,7 @@ public class Futopia {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         OtherBlocks.initialize();
-        OtherItems.initialize();
+//        OtherItems.initialize();
         FutopiaOreDictionary.init();
         proxy.init(event);
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
@@ -65,7 +70,7 @@ public class Futopia {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         OtherBlocks.postInit();
-        OtherItems.postInit();
+//        OtherItems.postInit();
         proxy.postInit(event);
     }
 

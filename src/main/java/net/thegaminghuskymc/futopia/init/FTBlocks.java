@@ -5,10 +5,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.block.decorativeBlocks.base.BlockFutopiaStair;
 import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeBasic;
 import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeFluid;
-import net.thegaminghuskymc.futopia.block.machine.BlockAlloyFurnace;
-import net.thegaminghuskymc.futopia.block.machine.BlockElectricalFurnace;
-import net.thegaminghuskymc.futopia.block.machine.BlockParticleBlock;
-import net.thegaminghuskymc.futopia.block.machine.BlockProjectTable;
+import net.thegaminghuskymc.futopia.block.machine.*;
 import net.thegaminghuskymc.futopia.block.normal.BlockConcrete;
 import net.thegaminghuskymc.futopia.block.worldgen.BlockAsphalt;
 import net.thegaminghuskymc.futopia.block.worldgen.BlockBaseOre;
@@ -39,6 +36,8 @@ public class FTBlocks {
 
     public static BlockFutopiaStair subStairBlock;
 
+    public static BlockEngine engine;
+
 
     public static void init() {
         instantiateBlocks();
@@ -58,8 +57,8 @@ public class FTBlocks {
         particle_block = new BlockParticleBlock();
         concrete = new BlockConcrete();
 
-//        ores = new BlockBaseOre();
-//        storage = new BlockBaseStorage();
+        ores = new BlockBaseOre();
+        storage = new BlockBaseStorage();
 
         asphalt = new BlockAsphalt();
 

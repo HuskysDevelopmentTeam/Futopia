@@ -25,3 +25,4 @@ eclipse
 run
 asm
 libs
+src/main/java/net/thegaminghuskymc/futopia/util/power/PowerHandlerUtil

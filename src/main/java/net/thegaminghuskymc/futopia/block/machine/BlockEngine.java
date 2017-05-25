@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -35,6 +36,16 @@ public class BlockEngine extends Block implements ITileEntityProvider {
     }
 
     @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullBlock(IBlockState state) {
+        return false;
+    }
+
+    @Override
     public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
         return true;
     }
@@ -45,6 +56,11 @@ public class BlockEngine extends Block implements ITileEntityProvider {
             world.setBlockState(pos.down(), Blocks.FIRE.getDefaultState());
 //            Minecraft.getMinecraft().effectRenderer.addEffect(new RocketParticle(world, pos.getX() - 0.5, pos.getY() - 1, pos.getZ() - 0.5, 0.0, 0.0, 0.0));
         }
+    }
+
+    @Override
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override

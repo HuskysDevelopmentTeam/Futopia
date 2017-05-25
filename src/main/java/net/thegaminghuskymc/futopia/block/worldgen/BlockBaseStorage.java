@@ -1,6 +1,7 @@
 package net.thegaminghuskymc.futopia.block.worldgen;
 
 import com.google.common.collect.Lists;
+import keri.ninetaillib.block.IMetaBlock;
 import keri.ninetaillib.texture.IIconRegistrar;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
@@ -20,7 +21,7 @@ import net.thegaminghuskymc.futopia.reference.Refs;
 
 import java.util.List;
 
-public class BlockBaseStorage extends BlockFutopia {
+public class BlockBaseStorage extends BlockFutopia implements IMetaBlock {
 
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite[] texture;
@@ -46,7 +47,12 @@ public class BlockBaseStorage extends BlockFutopia {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return state.getValue(FutopiaProperties.MATERIALS).getMetadata();
+        return ((EnumMaterialType)state.getValue(FutopiaProperties.MATERIALS)).getID();
+    }
+
+    @Override
+    public String[] getSubNames() {
+        return EnumMaterialType.toStringArray();
     }
 
     @Override

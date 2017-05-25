@@ -1,7 +1,7 @@
 {
   "variants": {
       "normal": {
-          "model": "futopia:engine"
+          "model": "futopia:power_cable_base"
       }
   }
 }

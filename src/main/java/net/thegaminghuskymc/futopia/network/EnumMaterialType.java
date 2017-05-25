@@ -1,9 +1,9 @@
 package net.thegaminghuskymc.futopia.network;
 
+import keri.ninetaillib.util.IPropertyProvider;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.util.IStringSerializable;
 
-public enum EnumMaterialType implements IStringSerializable {
+public enum EnumMaterialType implements IPropertyProvider {
 
     RED("red", 0),
     BLUE("blue", 1),
@@ -42,6 +42,26 @@ public enum EnumMaterialType implements IStringSerializable {
     EnumMaterialType(String name, int metadata) {
 
         this(name, metadata, 0, 5.0F, 6.0F, EnumRarity.COMMON);
+    }
+
+    public static String[] toStringArray() {
+        String[] names = new String[values().length];
+
+        for (int i = 0; i < values().length; i++) {
+            names[i] = values()[i].getName();
+        }
+
+        return names;
+    }
+
+    @Override
+    public int getID() {
+        return this.metadata;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
     public static EnumMaterialType byMetadata(int metadata) {

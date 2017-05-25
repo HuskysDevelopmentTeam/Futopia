@@ -9,25 +9,22 @@ import net.thegaminghuskymc.futopia.reference.Refs;
 
 public class ItemBaseShard extends ItemFutopia {
 
-    @SideOnly(Side.CLIENT)
     private TextureAtlasSprite[] texture;
 
     public ItemBaseShard() {
-        super("shard", EnumMaterialType.METADATA_LOOKUP.toString());
+        super("shard", EnumMaterialType.toStringArray());
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegistrar registrar) {
         this.texture = new TextureAtlasSprite[EnumMaterialType.values().length];
 
         for (int i = 0; i < EnumMaterialType.values().length; i++) {
-            this.texture[i] = registrar.registerIcon(Refs.MODID + ":items/resource/shard_" + EnumMaterialType.values()[i].getName());
+            this.texture[i] = registrar.registerIcon(Refs.MODID + ":items/material/shard_" + EnumMaterialType.values()[i].getName());
         }
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public TextureAtlasSprite getIcon(int meta) {
         return this.texture[meta];
     }
