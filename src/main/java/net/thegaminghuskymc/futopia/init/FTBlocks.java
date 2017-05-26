@@ -1,6 +1,5 @@
 package net.thegaminghuskymc.futopia.init;
 
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.block.decorativeBlocks.base.BlockFutopiaStair;
 import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeBasic;
@@ -15,7 +14,7 @@ import net.thegaminghuskymc.futopia.tile.tier1.TileAlloyFurnace;
 import net.thegaminghuskymc.futopia.tile.tier1.TileProjectTable;
 import net.thegaminghuskymc.futopia.tile.tier3.TileKinectGenerator;
 
-@GameRegistry.ObjectHolder(Refs.MODID)
+@ObjectHolder(Refs.MODID)
 public class FTBlocks {
 
     public static BlockAlloyFurnace alloyfurnace;
@@ -38,17 +37,12 @@ public class FTBlocks {
 
     public static BlockEngine engine;
 
-
     public static void init() {
         instantiateBlocks();
         registerTE();
     }
 
     private static void instantiateBlocks() {
-
-        if (Loader.isModLoaded("ninetaillib")) {
-
-        }
 
         projectTable = new BlockProjectTable();
         alloyfurnace = new BlockAlloyFurnace();
@@ -62,9 +56,6 @@ public class FTBlocks {
 
         asphalt = new BlockAsphalt();
 
-        //TODO Fix these stair things
-        /*subStairBlock = new BlockFutopiaStair("marble_stair", TFBlocks.marble.getDefaultState());
-        subStairBlock.registerModels();*/
     }
 
     private static void registerTE() {

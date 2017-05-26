@@ -18,8 +18,6 @@
 package net.thegaminghuskymc.futopia.tile.tier1;
 
 import keri.ninetaillib.tile.TileEntityBase;
-import net.minecraft.util.EnumFacing;
-import net.thegaminghuskymc.futopia.util.power.IInternalPoweredTile;
 
 public class TileElectricalFurnace extends TileEntityBase{
 

@@ -2,6 +2,7 @@ package net.thegaminghuskymc.futopia;
 
 import cofh.core.init.CoreProps;
 import cofh.core.util.ConfigHandler;
+import net.minecraft.block.Block;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.FluidRegistry;

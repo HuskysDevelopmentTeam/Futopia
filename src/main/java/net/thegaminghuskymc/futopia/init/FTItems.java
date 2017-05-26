@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.item.*;
 import net.thegaminghuskymc.futopia.reference.Refs;
 
-@GameRegistry.ObjectHolder(Refs.MODID)
 public class FTItems {
 
 
@@ -51,13 +50,12 @@ public class FTItems {
 
     private static ItemArmorHelperFutopia armorHelper = new ItemArmorHelperFutopia();
 
+
     public static void init() {
         instantiateItems();
     }
 
     private static void instantiateItems() {
-
-        if (Loader.isModLoaded("ninetaillib")) {
             windows_washer = new ItemWindowsWasher();
             meteor_spawner = new ItemMeteorSpawner();
 
@@ -88,6 +86,5 @@ public class FTItems {
             armorPurple = armorHelper.createArmorSet("purple", EnumHelper.addArmorMaterial("purple", Refs.MODID + ":purple", 16, new int[]{2, 5, 6, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.1F));
             armorTungsten = armorHelper.createArmorSet("tungsten", EnumHelper.addArmorMaterial("tungsten", Refs.MODID + ":tungsten", 16, new int[]{2, 5, 6, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.1F));
             armorZinc = armorHelper.createArmorSet("zinc", EnumHelper.addArmorMaterial("zinc", Refs.MODID + ":zinc", 16, new int[]{2, 5, 6, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.1F));
-        }
     }
 }

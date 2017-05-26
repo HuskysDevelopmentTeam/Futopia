@@ -1,7 +1,7 @@
 {
   "variants": {
       "normal": {
-          "model": "futopia:power_cable_base"
+          "model": "futopia:avtm300.obj"
       }
   }
 }
