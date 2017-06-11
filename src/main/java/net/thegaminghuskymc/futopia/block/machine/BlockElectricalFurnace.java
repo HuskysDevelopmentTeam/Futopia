@@ -1,9 +1,13 @@
 package net.thegaminghuskymc.futopia.block.machine;
 
 import keri.ninetaillib.texture.IIconRegistrar;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -13,7 +17,7 @@ import net.thegaminghuskymc.futopia.tile.tier1.TileElectricalFurnace;
 
 import java.util.List;
 
-public class BlockElectricalFurnace extends BlockMachineBase {
+public class BlockElectricalFurnace extends BlockMachineBase<TileElectricalFurnace>{
 
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite[] texture;

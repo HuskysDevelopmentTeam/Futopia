@@ -17,7 +17,7 @@ public class FTCreativeTabs {
     public static CreativeTabs armor;
 
     static {
-        blocks = new CreativeTabs("blocks") {
+        blocks = new CreativeTabs("blocks_ft") {
 
             @Override
             public Item getTabIconItem() {
@@ -26,7 +26,7 @@ public class FTCreativeTabs {
 
         };
 
-        worldgen = new CreativeTabs("worldgen") {
+        worldgen = new CreativeTabs("worldgen_ft") {
             @Override
             public Item getTabIconItem() {
                 return Item.getItemFromBlock(FTBlocks.ores);
@@ -34,21 +34,21 @@ public class FTCreativeTabs {
 
         };
 
-        decoration = new CreativeTabs("decoration") {
+        decoration = new CreativeTabs("decoration_ft") {
             @Override
             public Item getTabIconItem() {
                 return Item.getItemFromBlock(FTBlocks.asphalt);
             }
         };
 
-        machines = new CreativeTabs("machines") {
+        machines = new CreativeTabs("machines_ft") {
             @Override
             public Item getTabIconItem() {
                 return Item.getItemFromBlock(FTBlocks.particle_block);
             }
         };
 
-        tools = new CreativeTabs("tools") {
+        tools = new CreativeTabs("tools_ft") {
 
             @Override
             public Item getTabIconItem() {
@@ -57,7 +57,7 @@ public class FTCreativeTabs {
 
         };
 
-        armor = new CreativeTabs("armor") {
+        armor = new CreativeTabs("armor_ft") {
 
             @Override
             public Item getTabIconItem() {
@@ -66,16 +66,11 @@ public class FTCreativeTabs {
 
         };
 
-        materials = new CreativeTabs("futopia_materials") {
-
-            /*@Override
-            public Item getTabIconItem() {
-                return ItemMaterial.ingotRed.getItem();
-            }*/
+        materials = new CreativeTabs("items_ft") {
 
             @Override
             public Item getTabIconItem() {
-                return FTItems.gears.setHasSubtypes(false);
+                return FTItems.gears;
             }
         };
     }

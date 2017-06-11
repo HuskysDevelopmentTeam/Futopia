@@ -1,30 +1,29 @@
 package net.thegaminghuskymc.futopia.item;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.reference.Refs;
 
-public class ItemBase extends Item {
+/**
+ * Created by TheGamingHuskyMC on 30.05.2017.
+ */
+public class ItemBase extends Item{
 
-    public ItemBase() {
-
+    public ItemBase(String unlocolizedName, CreativeTabs creativeTab){
         super();
+        setUnlocalizedName(unlocolizedName);
+        setRegistryName(unlocolizedName);
+        setCreativeTab(creativeTab);
+        registerRender(this);
+        GameRegistry.register(this);
     }
 
-    @Override
-    public String getUnlocalizedName() {
-
-        return String.format("item.%s:%s", Refs.MODID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+    public static void registerRender(Item item) {
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Refs.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
     }
 
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-
-        return String.format("item.%s:%s", Refs.MODID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
-
-    protected String getUnwrappedUnlocalizedName(String name) {
-
-        return name.substring(name.indexOf(".") + 1);
-    }
 }

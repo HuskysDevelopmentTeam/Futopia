@@ -7,7 +7,9 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.item.*;
 import net.thegaminghuskymc.futopia.reference.Refs;
+import slimeknights.tconstruct.library.TinkerRegistry;
 
+@GameRegistry.ObjectHolder(Refs.MODID)
 public class FTItems {
 
 

@@ -15,6 +15,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.block.BlockFutopia;
+import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.init.FTItems;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
@@ -70,7 +71,7 @@ public class BlockBaseOre extends BlockFutopia implements IMetaBlock{
 
     @Override
     public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        return Lists.newArrayList(new ItemStack(FTItems.ingots, 1 + fortune, getMetaFromState(state)));
+        return Lists.newArrayList(new ItemStack(FTBlocks.ores, 1 + fortune, getMetaFromState(state)));
     }
 
     @Override

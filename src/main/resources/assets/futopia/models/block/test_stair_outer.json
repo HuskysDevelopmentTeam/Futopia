@@ -1,0 +1,9 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "futopia:blocks/worldgen/marble/new/marble_fancy_side",
+        "top": "futopia:blocks/worldgen/marble/new/marble_fancy_side",
+        "side": "futopia:blocks/worldgen/marble/new/marble_fancy_side",
+        "particle": "futopia:blocks/worldgen/marble/new/marble_fancy_side"
+    }
+}

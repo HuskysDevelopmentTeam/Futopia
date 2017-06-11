@@ -21,8 +21,6 @@ public interface IFutopiaProxy {
 
     IIconRegistrar getIconRegistrar();
 
-    TextureAtlasSprite getAnimationIcon();
-
     void registerItemRenderer(Item item, int meta, String id);
 
     boolean addIModelRegister(IModelRegister modelRegister);

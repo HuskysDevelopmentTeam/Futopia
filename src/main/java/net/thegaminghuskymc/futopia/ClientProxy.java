@@ -11,8 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.client.RenderingRegistryThings;
-import net.thegaminghuskymc.futopia.client.render.AnimationFX;
+import net.thegaminghuskymc.futopia.client.RenderingRegisteryThings;
 
 import java.util.ArrayList;
 
@@ -20,13 +19,11 @@ import java.util.ArrayList;
 public class ClientProxy implements IFutopiaProxy {
 
     private static final DefaultIconRegistrar iconRegistrar = new DefaultIconRegistrar();
-    private static final RenderingRegistryThings renderingRegistry = new RenderingRegistryThings();
-    private static AnimationFX animationFX;
+    private static final RenderingRegisteryThings renderingRegistry = new RenderingRegisteryThings();
     private static ArrayList<IModelRegister> modelList = new ArrayList<>();
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
-        animationFX = new AnimationFX(Futopia.CONFIG.animationResolution.getValue());
         iconRegistrar.preInit();
         renderingRegistry.preInit();
         for (IModelRegister register : modelList) {
@@ -52,11 +49,6 @@ public class ClientProxy implements IFutopiaProxy {
     @Override
     public IIconRegistrar getIconRegistrar() {
         return iconRegistrar;
-    }
-
-    @Override
-    public TextureAtlasSprite getAnimationIcon() {
-        return animationFX.texture;
     }
 
     @Override

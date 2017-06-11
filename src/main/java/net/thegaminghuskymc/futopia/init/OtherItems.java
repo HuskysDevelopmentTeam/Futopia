@@ -1,11 +1,14 @@
 package net.thegaminghuskymc.futopia.init;
 
 import cofh.core.util.core.IInitializer;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.item.ItemMaterial;
+import net.thegaminghuskymc.futopia.reference.Refs;
 
 import java.util.ArrayList;
 
+@GameRegistry.ObjectHolder(Refs.MODID)
 public class OtherItems {
 
     /* REFERENCES */

@@ -39,11 +39,6 @@ public class CommonProxy implements IFutopiaProxy {
     }
 
     @Override
-    public TextureAtlasSprite getAnimationIcon() {
-        return null;
-    }
-
-    @Override
     public void registerItemRenderer(Item item, int meta, String id) {
     }
 

@@ -13,7 +13,6 @@ import java.util.List;
 public class FutopiaConfig extends ConfigManagerBase {
 
     private static final String categoryIntegration = "mod_integration";
-    private static final String categoryRendering = "rendering";
     private static final String categoryWorldgen = "worldgen_ores";
     private static final String commentCategoryIntegration = "enable/disable mod integration modules";
     private static final String commentCategoryRendering = "rendering tweaks that (may) improve performance";
@@ -23,9 +22,6 @@ public class FutopiaConfig extends ConfigManagerBase {
     public ConfigBoolean integrationThermalExpansion;
     public ConfigBoolean integrationIC2;
     public ConfigBoolean integrationEnderIO;
-    public ConfigBoolean fastItemRendering;
-    public ConfigBoolean fancyBoundingBoxes;
-    public ConfigInteger animationResolution;
 
     public FutopiaConfig(FMLPreInitializationEvent event) {
         super(event);
@@ -35,7 +31,6 @@ public class FutopiaConfig extends ConfigManagerBase {
     public List<Pair<String, String>> getCategories() {
         List<Pair<String, String>> list = Lists.newArrayList();
         list.add(Pair.of(this.categoryIntegration, this.commentCategoryIntegration));
-        list.add(Pair.of(this.categoryRendering, this.commentCategoryRendering));
         list.add(Pair.of(this.categoryWorldgen, this.commentCategoryWorldgen));
         return list;
     }
@@ -46,9 +41,6 @@ public class FutopiaConfig extends ConfigManagerBase {
         components.add(this.integrationThermalExpansion = new ConfigBoolean(categoryIntegration, "integrationThermalExpansion", true));
         components.add(this.integrationIC2 = new ConfigBoolean(categoryIntegration, "integrationIC2", true));
         components.add(this.integrationEnderIO = new ConfigBoolean(categoryIntegration, "integrationEnderIO", true));
-        components.add(this.fastItemRendering = new ConfigBoolean(categoryRendering, "fastItemRendering", false));
-        components.add(this.fancyBoundingBoxes = new ConfigBoolean(categoryRendering, "fancyBoundingBoxes", true));
-        components.add(this.animationResolution = new ConfigInteger(categoryRendering, "animationResolution", 32, 16, 128));
     }
 
 }

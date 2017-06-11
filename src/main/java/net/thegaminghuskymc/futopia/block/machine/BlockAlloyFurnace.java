@@ -28,10 +28,12 @@ public class BlockAlloyFurnace extends BlockMachineBase {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegistrar registrar) {
-        this.texture = new TextureAtlasSprite[3];
-        this.texture[0] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_side");
-        this.texture[1] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_back");
-        this.texture[2] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_front_on");
+        this.texture = new TextureAtlasSprite[5];
+        this.texture[0] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_side_alt");
+        this.texture[1] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_back_alt");
+        this.texture[2] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_top_alt");
+        this.texture[3] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_top_alt");
+        this.texture[4] = registrar.registerIcon(Refs.MODID + ":blocks/machines/alloy_furnace/alloy_furnace_front_on_alt");
     }
 
     @Override
@@ -39,11 +41,11 @@ public class BlockAlloyFurnace extends BlockMachineBase {
     public TextureAtlasSprite getIcon(int meta, int side) {
         switch (side) {
             case 0:
-                return this.texture[0];
+                return this.texture[3];
             case 1:
-                return this.texture[0];
-            case 2:
                 return this.texture[2];
+            case 2:
+                return this.texture[4];
             case 3:
                 return this.texture[1];
             case 4:

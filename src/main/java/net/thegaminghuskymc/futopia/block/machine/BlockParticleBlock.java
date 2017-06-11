@@ -3,9 +3,14 @@ package net.thegaminghuskymc.futopia.block.machine;
 import cofh.lib.util.helpers.StringHelper;
 import keri.ninetaillib.texture.IIconRegistrar;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.block.BlockFutopia;
@@ -33,6 +38,13 @@ public class BlockParticleBlock extends BlockFutopia {
             tooltip.add(StringHelper.getInfoText("This block is used to summon whatever particles you want"));
         }
     }
+    
+    /*@Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+    		EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+    	// TODO Auto-generated method stub
+    	return super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ);
+    }*/
 
     @Override
     @SideOnly(Side.CLIENT)

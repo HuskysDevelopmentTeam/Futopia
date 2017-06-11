@@ -225,3 +225,10 @@ item.futopia.boots_zinc.name=Zinc Boots
 item.futopia.boots_tungsten.name=Tungsten Boots
 
 # Creative Tabs
+itemGroup.blocks_ft=Futopia Blocks
+itemGroup.worldgen_ft=Futopia Worldgen
+itemGroup.decoration_ft=Futopia Decoration
+itemGroup.machines_ft=Futopia Machines
+itemGroup.tools_ft=Futopia Tools
+itemGroup.armor_ft=Futopia Armor
+itemGroup.items_ft=Futopia Items

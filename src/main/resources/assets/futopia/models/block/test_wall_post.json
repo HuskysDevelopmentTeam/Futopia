@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_post",
+    "textures": {
+        "wall": "futopia:blocks/worldgen/marble/new/marble_fancy_side"
+    }
+}

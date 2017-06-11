@@ -27,7 +27,7 @@ public class ItemWindowsWasher extends ItemFutopia {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegistrar registrar) {
-        this.texture = registrar.registerIcon(Refs.MODID + ":items/windows_washer_orange");
+        this.texture = registrar.registerIcon(Refs.MODID + ":items/windows_washer");
     }
 
     @Override
@@ -42,17 +42,12 @@ public class ItemWindowsWasher extends ItemFutopia {
             tooltip.add("Hold " + StringHelper.getDeactivationText("Shift") + StringHelper.getFlavorText(" for information."));
         } else {
             tooltip.add(StringHelper.getNoticeText("This is used to clean your windows"));
-            tooltip.add(StringHelper.getNoticeText("Expirience the POWER of THE  WINDOWS WASHER FROM THE FUTURE!"));
+            tooltip.add(StringHelper.getNoticeText("Expirience the POWER of THE FUTURE!"));
             tooltip.add(StringHelper.getNoticeText("It can get the TOUGH STRAINS OUT!"));
             tooltip.add(StringHelper.getNoticeText("Get it at the store for $19.99."));
             tooltip.add(StringHelper.getNoticeText("Please don't drink the contents of this bottle."));
             tooltip.add(StringHelper.getNoticeText("Like serioustly, are you that retarded?"));
         }
-    }
-
-    @Override
-    public IRenderingRegistry getRenderingRegistry() {
-        return Futopia.proxy.getRenderingRegistry();
     }
 
 }
