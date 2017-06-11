@@ -1,0 +1,51 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"raw": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_raw"
+				}
+			},
+			"paver": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_paver"
+				}
+			},
+			"brick": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_brick"
+				}
+			},
+			"fancy": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_fancy"
+				}
+			},
+			"brick_small": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_brick_small"
+				}
+			},
+			"tile": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/marble/new/marble_tile"
+				}
+			},
+			"pillar": {
+				"textures": {
+					"down": "futopia:blocks/worldgen/marble/new/marble_pillar_top",
+					"up": "futopia:blocks/worldgen/marble/new/marble_pillar_top",
+					"north": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"south": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"west": "futopia:blocks/worldgen/marble/new/marble_pillar_side",
+					"east": "futopia:blocks/worldgen/marble/new/marble_pillar_side"
+				}
+			}
+		}
+	}
+}

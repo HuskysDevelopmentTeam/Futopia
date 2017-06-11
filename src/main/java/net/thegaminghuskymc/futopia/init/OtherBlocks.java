@@ -1,14 +1,20 @@
 package net.thegaminghuskymc.futopia.init;
 
-import cofh.core.util.core.IInitializer;
-import net.thegaminghuskymc.futopia.Futopia;
-import net.thegaminghuskymc.futopia.block.normal.BlockClearGlass;
-import net.thegaminghuskymc.futopia.block.normal.BlockCrackedGlass;
-import net.thegaminghuskymc.futopia.block.normal.BlockDirtyGlass;
-import net.thegaminghuskymc.futopia.block.worldgen.*;
-
 import java.util.ArrayList;
 
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.blocks.IInitializer;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockClearGlass;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockCrackedGlass;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockDirtyGlass;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBasalt;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockMarble;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockMeteor;
+
+@GameRegistry.ObjectHolder(Refs.MODID)
 public class OtherBlocks {
 
     /* REFERENCES */
@@ -39,11 +45,11 @@ public class OtherBlocks {
 //        initList.add(crackedGlass);
 //        initList.add(dirtyGlass);
 
-        Futopia.proxy.addIModelRegister(limestone);
-        Futopia.proxy.addIModelRegister(marble);
-        Futopia.proxy.addIModelRegister(basalt);
-        Futopia.proxy.addIModelRegister(meteor);
-        Futopia.proxy.addIModelRegister(clearGlass);
+        Futopia.PROXY.addIModelRegister(limestone);
+        Futopia.PROXY.addIModelRegister(marble);
+        Futopia.PROXY.addIModelRegister(basalt);
+        Futopia.PROXY.addIModelRegister(meteor);
+        Futopia.PROXY.addIModelRegister(clearGlass);
 //        Futopia.proxy.addIModelRegister(crackedGlass);
 //        Futopia.proxy.addIModelRegister(dirtyGlass);
 

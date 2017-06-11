@@ -9,7 +9,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.tile.tier1.TilePlatingPress;
+import net.thegaminghuskymc.futopia.tiles.TilePlatingPress;
 
 @SideOnly(Side.CLIENT)
 public class PlatingPressRenderer extends TileEntitySpecialRenderer<TilePlatingPress> {

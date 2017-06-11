@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.init;
 
+import keri.ninetaillib.lib.mod.ContentLoader;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -9,10 +10,10 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 
-import static cofh.lib.util.helpers.ItemHelper.cloneStack;
-
+@ContentLoader(modid = Refs.MODID)
 public class Recipies {
 
     public static void init() {
@@ -22,8 +23,8 @@ public class Recipies {
         addPlateRecipes();
         addBlockRecipes();
         addItemRecipes();
-        addArmorRecipies();
-        addToolRecipies();
+//        addArmorRecipies();
+//        addToolRecipies();
     }
 
     private static void addSawRecipes() {
@@ -34,7 +35,7 @@ public class Recipies {
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.ZINC.ordinal()), "ingotZinc");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TUNGSTEN.ordinal()), "ingotTungsten");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BRASS.ordinal()), "ingotBrass");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TESSELATION.ordinal()), "ingotTesselite");
+        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TESSELITE.ordinal()), "ingotTesselite");
 
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
@@ -43,7 +44,7 @@ public class Recipies {
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TESSELATION.ordinal()), "alloyFutopiaTesselite");
+        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
     }
 
     private static void addHammerRecipes() {
@@ -54,7 +55,7 @@ public class Recipies {
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.ZINC.ordinal()), "ingotZinc");
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TUNGSTEN.ordinal()), "ingotTungsten");
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.BRASS.ordinal()), "ingotBrass");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TESSELATION.ordinal()), "ingotTesselite");
+        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TESSELITE.ordinal()), "ingotTesselite");
 
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
@@ -63,7 +64,7 @@ public class Recipies {
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
         addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TESSELATION.ordinal()), "alloyFutopiaTesselite");
+        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
     }
 
     private static void addPlateRecipes() {
@@ -74,7 +75,7 @@ public class Recipies {
         addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.TUNGSTEN.ordinal()),  "alloyFutopiaTungsten");
         addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.BRASS.ordinal()),  "alloyFutopiaBrass");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.TESSELATION.ordinal()), "alloyFutopiaTesselite");
+        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
     }
 
     private static void addDustRecipes() {
@@ -85,7 +86,7 @@ public class Recipies {
         addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.TUNGSTEN.ordinal()),"alloyFutopiaTungsten");
         addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.BRASS.ordinal()),"alloyFutopiaBrass");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.TESSELATION.ordinal()),"alloyFutopiaTesselite");
+        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.TESSELITE.ordinal()),"alloyFutopiaTesselite");
     }
 
     private static void addNuggetRecipes() {
@@ -96,7 +97,7 @@ public class Recipies {
         addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.TUNGSTEN.ordinal()),"alloyFutopiaTungsten");
         addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.BRASS.ordinal()),"alloyFutopiaBrass");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.TESSELATION.ordinal()),"alloyFutopiaTesselite");
+        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.TESSELITE.ordinal()),"alloyFutopiaTesselite");
     }
 
     private static void addItemRecipes() {
@@ -107,7 +108,7 @@ public class Recipies {
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TESSELATION.ordinal()), "alloyFutopiaTesselite");
+        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
 
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.RED.ordinal()), "ingotRed");
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.BLUE.ordinal()), "ingotBlue");
@@ -116,7 +117,7 @@ public class Recipies {
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.ZINC.ordinal()), "ingotZinc");
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TUNGSTEN.ordinal()), "ingotTungsten");
         addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.BRASS.ordinal()), "ingotBrass");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TESSELATION.ordinal()), "ingotTesselite");
+        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TESSELITE.ordinal()), "ingotTesselite");
 
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.RED.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()), 0.0F);
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()), 0.0F);
@@ -125,27 +126,27 @@ public class Recipies {
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()), 0.0F);
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TESSELATION.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELATION.ordinal()), 0.0F);
+        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), 0.0F);
     }
 
     private static void addBlockRecipes() {
-        CraftingManager.getInstance().addRecipe(new ShapedOreRecipe(new ItemStack(FTBlocks.particle_block), "RBG", "GRB", "BGR", 'B', "ingotBlue",
+        /*CraftingManager.getInstance().addRecipe(new ShapedOreRecipe(new ItemStack(FTBlocks.particle_block), "RBG", "GRB", "BGR", 'B', "ingotBlue",
                 'R', "ingotRed", 'G', "ingotGreen"));
 
         CraftingManager.getInstance().addRecipe(new ShapedOreRecipe(new ItemStack(FTBlocks.particle_block), "RBG", "GRB", "BGR", 'B', "alloyFutopiaBlue",
-                'R', "alloyFutopiaRed", 'G', "alloyFutopiaGreen"));
+                'R', "alloyFutopiaRed", 'G', "alloyFutopiaGreen"));*/
 
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.RED.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.RED.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BLUE.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.PURPLE.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.GREEN.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.ZINC.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.ingots, 9, EnumMaterialType.TESSELATION.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TESSELATION.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.RED.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BLUE.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.PURPLE.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.GREEN.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.ZINC.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
+//        addSmelting(new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TESSELITE.ordinal()), 0.0F);
     }
 
-    private static void addToolRecipies() {
+    /*private static void addToolRecipies() {
         addToolsetRecipe(FTItems.toolsRed, "ingotRed");
         addToolsetRecipe(FTItems.toolsBlue, "ingotBlue");
         addToolsetRecipe(FTItems.toolsPurple, "ingotPurple");
@@ -175,7 +176,7 @@ public class Recipies {
         addArmorsetRecipe(FTItems.armorGreen, "alloyFutopiaGreen");
         addArmorsetRecipe(FTItems.armorZinc, "alloyFutopiaZinc");
         addArmorsetRecipe(FTItems.armorTungsten, "alloyFutopiaTungsten");
-    }
+    }*/
 
     private static void addToolsetRecipe(Item[] toolset, String material) {
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[0]), " X ", " X ", " C ", 'X', material, 'C', FTItems.ironStick));
@@ -215,9 +216,115 @@ public class Recipies {
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(armorset[2]), "XXX", "X X", "X X", 'X', material));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(armorset[3]), "   ", "X X", "X X", 'X', material));
     }
+    
+    public static ItemStack cloneStack(Item item, int stackSize)
+    {
+        if(item == null)
+            return null;
+        else
+            return new ItemStack(item, stackSize);
+    }
+
+    public static ItemStack cloneStack(Block item, int stackSize)
+    {
+        if(item == null)
+            return null;
+        else
+            return new ItemStack(item, stackSize);
+    }
+
+    public static ItemStack cloneStack(ItemStack stack, int stackSize)
+    {
+        if(stack == null)
+        {
+            return null;
+        } else
+        {
+            ItemStack retStack = stack.copy();
+            retStack.getCount();
+            return retStack;
+        }
+    }
+
+    public static ItemStack cloneStack(ItemStack stack)
+    {
+        return stack != null ? stack.copy() : null;
+    }
+    
+    public static boolean addSmelting(ItemStack out, Item in)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.0F);
+            return true;
+        }
+    }
+
+    public static boolean addSmelting(ItemStack out, Block in)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.0F);
+            return true;
+        }
+    }
+
+    public static boolean addSmelting(ItemStack out, ItemStack in)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.0F);
+            return true;
+        }
+    }
+
+    public static boolean addSmelting(ItemStack out, Item in, float XP)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
+            return true;
+        }
+    }
+
+    public static boolean addSmelting(ItemStack out, Block in, float XP)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
+            return true;
+        }
+    }
+
+    public static boolean addSmelting(ItemStack out, ItemStack in, float XP)
+    {
+        if((out == null) | (in == null))
+        {
+            return false;
+        } else
+        {
+            FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
+            return true;
+        }
+    }
 
     // SMELTING{
-    public static boolean addSmelting(ItemStack out, Item in) {
+    /*public static boolean addSmelting(ItemStack out, Item in) {
 
         if (out == null | in == null) {
             return false;
@@ -296,6 +403,6 @@ public class Recipies {
         }
         FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.1f);
         return true;
-    }
+    }*/
 
 }

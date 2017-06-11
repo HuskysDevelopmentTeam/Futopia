@@ -1,78 +1,50 @@
 package net.thegaminghuskymc.futopia;
 
-import cofh.core.init.CoreProps;
-import cofh.core.util.ConfigHandler;
-import net.minecraft.block.Block;
-import net.minecraftforge.client.model.obj.OBJLoader;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fluids.FluidRegistry;
+import keri.ninetaillib.lib.logger.ModLogger;
+import keri.ninetaillib.lib.mod.ModHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.thegaminghuskymc.futopia.client.GuiHandler;
-import net.thegaminghuskymc.futopia.client.gui.GUIHandler;
-import net.thegaminghuskymc.futopia.init.*;
-import net.thegaminghuskymc.futopia.loaders.BlockLoader;
-import net.thegaminghuskymc.futopia.reference.Refs;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.thegaminghuskymc.futopia.init.OtherBlocks;
+import net.thegaminghuskymc.futopia.proxy.IFutopiaProxy;
 
-import java.io.File;
+import static net.thegaminghuskymc.futopia.Refs.CSIDE;
+import static net.thegaminghuskymc.futopia.Refs.SSIDE;
 
-@Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS)
+@Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS, acceptedMinecraftVersions = Refs.ACC_MC)
 public class Futopia {
 
-    public static final GUIHandler GUI_HANDLER = new GUIHandler();
-    public static final GuiHandler GUI_HANDLER2 = new GuiHandler();
-    public static final ConfigHandler CONFIG2 = new ConfigHandler(Refs.VERSION);
-    public static final ConfigHandler CONFIG_CLIENT = new ConfigHandler(Refs.VERSION);
-    @Instance(Refs.MODID)
-    public static Futopia instance;
-    @SidedProxy(clientSide = Refs.CLIENT_PROXY, serverSide = Refs.COMMON_PROXY)
-    public static IFutopiaProxy proxy;
-    public static FutopiaConfig CONFIG;
-    public static Logger log = LogManager.getLogger(Refs.NAME);
+    @Mod.Instance(value = Refs.MODID)
+    public static Futopia INSTANCE = new Futopia();
+    public static ModHandler MOD_HANDLER = new ModHandler(INSTANCE);
 
-    static {
-        FluidRegistry.enableUniversalBucket();
-        FluidRegistry.validateFluidRegistry();
-    }
+    @SidedProxy(clientSide = CSIDE, serverSide = SSIDE)
+    public static IFutopiaProxy PROXY;
+    @ModLogger
+    public static IFutopiaLogger LOGGER;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        OBJLoader.INSTANCE.addDomain(Refs.MODID);
-        CONFIG = new FutopiaConfig(event);
-        CONFIG2.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/common.cfg"), true));
-        CONFIG_CLIENT.setConfiguration(new Configuration(new File(CoreProps.configDir, "/futopia/" + Refs.MODID + "/client.cfg"), true));
-        FTBlocks.init();
-        BlockLoader.loadBlocks();
-        BlockLoader.initModels();
+        MOD_HANDLER.handlePreInit(event);
         OtherBlocks.preInit();
-//        OtherItems.preInit();
-        FTItems.init();
-        Recipies.init();
-        proxy.preInit(event);
+        PROXY.preInit(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        MOD_HANDLER.handleInit(event);
         OtherBlocks.initialize();
-//        OtherItems.initialize();
-        FutopiaOreDictionary.init();
-        proxy.init(event);
-        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
+        PROXY.init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        MOD_HANDLER.handlePostInit(event);
         OtherBlocks.postInit();
-//        OtherItems.postInit();
-        proxy.postInit(event);
+        PROXY.postInit(event);
     }
-
 }

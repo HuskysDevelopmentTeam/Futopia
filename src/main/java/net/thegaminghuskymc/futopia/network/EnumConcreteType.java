@@ -1,8 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumConcreteType implements IPropertyProvider {
+public enum EnumConcreteType implements IStringSerializable {
 
     NORMAL(0, "normal"),
     ARRANGED_BRICK(1, "arranged_brick"),
@@ -31,7 +31,6 @@ public enum EnumConcreteType implements IPropertyProvider {
         return names;
     }
 
-    @Override
     public int getID() {
         return this.ID;
     }

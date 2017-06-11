@@ -1,8 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumMeteorType implements IPropertyProvider {
+public enum EnumMeteorType implements IStringSerializable {
 
     NORMAL("normal", 0),
     BRICK("brick", 1),
@@ -26,7 +26,6 @@ public enum EnumMeteorType implements IPropertyProvider {
         return names;
     }
 
-    @Override
     public int getID() {
         return this.ID;
     }

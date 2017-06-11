@@ -1,8 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumBasaltType implements IPropertyProvider {
+public enum EnumBasaltType implements IStringSerializable {
 
     NORMAL("normal", 0),
     COBBLE("cobble", 1),
@@ -32,7 +32,6 @@ public enum EnumBasaltType implements IPropertyProvider {
         return names;
     }
 
-    @Override
     public int getID() {
         return this.ID;
     }

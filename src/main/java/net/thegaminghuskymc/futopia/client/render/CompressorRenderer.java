@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.thegaminghuskymc.futopia.tile.tier1.TileCompressor;
+import net.thegaminghuskymc.futopia.tiles.TileCompressor;
 
 public class CompressorRenderer extends TileEntitySpecialRenderer<TileCompressor> {
 

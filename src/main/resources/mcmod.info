@@ -2,14 +2,19 @@
 {
   "modid": "futopia",
   "name": "Futopia",
-  "description": "This mod is a tech mod locateed in the future with amazing blocks like a particle block that generates whatever particles you want",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "authorList": ["TheProgrammingHuskyMC, •°☆Wufflez☆°•"],
-  "credits": "Thanks to my amazing artist •°☆Wufflez☆°• he is the best",
-  "logoFile": "assets/futopia/textures/logo.png",
-  "dependencies": [
-  	"Forge,cofhcore,ninetaillib"
-  ]
+  "description": "This mod is a tech mod located in the future with amazing blocks like a particle block that generates whatever particles you want",
+  "version": "$version",
+  "mcversion": "$mcversion",
+  "authorList": ["TheGamingHuskyMC"],
+  "logoFile": ""
+},
+{
+  "modid": "testmod",
+  "name": "Test Mod",
+  "description": "This mod is my test mod",
+  "version": "$version",
+  "mcversion": "$mcversion",
+  "authorList": ["TheGamingHuskyMC"],
+  "logoFile": ""
 }
 ]

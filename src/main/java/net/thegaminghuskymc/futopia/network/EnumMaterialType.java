@@ -1,9 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
-import net.minecraft.item.EnumRarity;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumMaterialType implements IPropertyProvider {
+public enum EnumMaterialType implements IStringSerializable{
 
     RED("red", 0),
     BLUE("blue", 1),
@@ -12,80 +11,43 @@ public enum EnumMaterialType implements IPropertyProvider {
     ZINC("zinc", 4),
     TUNGSTEN("tungsten", 5),
     BRASS("brass", 6),
-    TESSELATION("tesselite", 7);
+    TESSELITE("tesselite", 7);
 
-    public static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];
+    public static final EnumMaterialType[] VALUES = new EnumMaterialType[]{
+            RED,
+            BLUE,
+            PURPLE,
+            GREEN,
+            ZINC,
+            TUNGSTEN,
+            BRASS,
+            TESSELITE
+    };
 
-    static {
-        for (EnumMaterialType type : values()) {
-            METADATA_LOOKUP[type.getMetadata()] = type;
-        }
-    }
+    private int index;
+    private String name;
 
-    public final int metadata;
-    public final String name;
-    public final int light;
-    public final float hardness;
-    public final float resistance;
-    public final EnumRarity rarity;
-
-    EnumMaterialType(String name, int metadata, int light, float hardness, float resistance, EnumRarity rarity) {
-
-        this.metadata = metadata;
+    EnumMaterialType(String name, int index){
+        this.index = index;
         this.name = name;
-        this.light = light;
-        this.rarity = rarity;
-        this.hardness = hardness;
-        this.resistance = resistance;
     }
 
-    EnumMaterialType(String name, int metadata) {
-
-        this(name, metadata, 0, 5.0F, 6.0F, EnumRarity.COMMON);
+    public int getIndex(){
+        return this.index;
     }
 
-    public static String[] toStringArray() {
-        String[] names = new String[values().length];
-
-        for (int i = 0; i < values().length; i++) {
-            names[i] = values()[i].getName();
-        }
-
-        return names;
-    }
-
-    @Override
-    public int getID() {
-        return this.metadata;
-    }
-
-    @Override
-    public String toString() {
+    public String getName(){
         return this.name;
     }
 
-    public static EnumMaterialType byMetadata(int metadata) {
+    public static String[] toStringArray(){
+        String[] array = new String[VALUES.length];
 
-        if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
-            metadata = 0;
+        for(int i = 0; i < array.length; i++){
+            array[i] = VALUES[i].name;
         }
-        return METADATA_LOOKUP[metadata];
-    }
 
-    public int getMetadata() {
-
-        return this.metadata;
-    }
-
-    @Override
-    public String getName() {
-
-        return this.name;
-    }
-
-    public int getLight() {
-
-        return this.light;
+        return array;
     }
 
 }

@@ -1,0 +1,66 @@
+{
+  "cuboids": [
+    {
+      "name": "cuboid_1",
+      "bounds": [1.0, 0.0, 1.0, 15.0, 3.0, 2.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_2",
+      "bounds": [1.0, 0.0, 14.0, 15.0, 3.0, 15.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_3",
+      "bounds": [14.0, 0.0, 1.0, 15.0, 3.0, 15.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_4",
+      "bounds": [1.0, 0.0, 1.0, 2.0, 3.0, 15.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_5",
+      "bounds": [2.0, 3.0, 2.0, 14.0, 6.0, 14.0],
+      "texture": {
+        "down": "minecraft:blocks/cauldron_inner",
+        "north": "minecraft:blocks/anvil_base",
+        "south": "minecraft:blocks/anvil_base",
+        "east": "minecraft:blocks/anvil_base",
+        "west": "minecraft:blocks/anvil_base",
+        "up": "minecraft:blocks/anvil_base"
+      }
+    },
+    {
+      "name": "cuboid_6",
+      "bounds": [3.0, 6.0, 3.0, 13.0, 9.0, 13.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_7",
+      "bounds": [4.0, 9.0, 4.0, 12.0, 12.0, 12.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_8",
+      "bounds": [5.0, 12.0, 5.0, 11.0, 15.0, 11.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_9",
+      "bounds": [1.0, 15.0, 1.0, 15.0, 16.0, 15.0],
+      "texture": "minecraft:blocks/anvil_base"
+    },
+    {
+      "name": "cuboid_10",
+      "bounds": [7.0, 10.0, 12.0, 9.0, 11.0, 14.0],
+      "texture": "minecraft:blocks/clay"
+    },
+    {
+      "name": "cuboid_11",
+      "bounds": [7.0, 11.0, 13.0, 9.0, 15.0, 14.0],
+      "texture": "minecraft:blocks/clay"
+    }
+  ]
+}

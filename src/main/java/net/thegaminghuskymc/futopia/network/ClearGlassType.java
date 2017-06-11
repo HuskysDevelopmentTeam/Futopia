@@ -1,8 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.util.IStringSerializable;
 
-public enum ClearGlassType implements IPropertyProvider {
+public enum ClearGlassType implements IStringSerializable {
 
     NORMAL("normal", 0, new float[]{0.427F, 0.471F, 0.604F}),
     BLACK("black", 1, new float[]{0.427F, 0.471F, 0.604F}),
@@ -64,7 +64,6 @@ public enum ClearGlassType implements IPropertyProvider {
         return METADATA_LOOKUP[metadata];
     }
 
-    @Override
     public int getID() {
         return this.metadata;
     }

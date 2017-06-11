@@ -1,8 +1,8 @@
 package net.thegaminghuskymc.futopia.network;
 
-import keri.ninetaillib.util.IPropertyProvider;
+import net.minecraft.util.IStringSerializable;
 
-public enum EnumLimestoneType implements IPropertyProvider {
+public enum EnumLimestoneType implements IStringSerializable {
 
     NORMAL("normal", 0),
     PAVER("paver", 1),
@@ -29,7 +29,6 @@ public enum EnumLimestoneType implements IPropertyProvider {
         return names;
     }
 
-    @Override
     public int getID() {
         return this.ID;
     }

@@ -1,67 +1,64 @@
 package net.thegaminghuskymc.futopia.init;
 
+import keri.ninetaillib.lib.mod.ContentLoader;
+import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.thegaminghuskymc.futopia.block.decorativeBlocks.base.BlockFutopiaStair;
-import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeBasic;
-import net.thegaminghuskymc.futopia.block.idk.pipe.BlockPipeFluid;
-import net.thegaminghuskymc.futopia.block.machine.*;
-import net.thegaminghuskymc.futopia.block.normal.BlockConcrete;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockAsphalt;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockBaseOre;
-import net.thegaminghuskymc.futopia.block.worldgen.BlockBaseStorage;
-import net.thegaminghuskymc.futopia.reference.Refs;
-import net.thegaminghuskymc.futopia.tile.tier1.TileAlloyFurnace;
-import net.thegaminghuskymc.futopia.tile.tier1.TileProjectTable;
-import net.thegaminghuskymc.futopia.tile.tier3.TileKinectGenerator;
+import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.blocks.BlockBaseOre;
+import net.thegaminghuskymc.futopia.blocks.BlockBaseStorage;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockCPU;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockDiskDrive;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockIOExpander;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitor;
+import net.thegaminghuskymc.futopia.blocks.machine.BlockAlloyFurnace;
+import net.thegaminghuskymc.futopia.blocks.machine.BlockElectricalFurnace;
+import net.thegaminghuskymc.futopia.blocks.machine.BlockParticleBlock;
+import net.thegaminghuskymc.futopia.blocks.machine.BlockProjectTable;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockConcrete;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockSlabBase;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockStairsBase;
+import net.thegaminghuskymc.futopia.blocks.normal.BlockWallBase;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockAsphalt;
+import net.thegaminghuskymc.futopia.tiles.TileAlloyFurnace;
+import net.thegaminghuskymc.futopia.tiles.TileElectricalFurnace;
+import net.thegaminghuskymc.futopia.tiles.TileProjectTable;
 
-@ObjectHolder(Refs.MODID)
+@ContentLoader(modid = Refs.MODID)
 public class FTBlocks {
 
-    public static BlockAlloyFurnace alloyfurnace;
+//    public static Block table = new BlockTable();
+//    public static Block engine = new BlockEngine();
+//    public static Block cable = new BlockCable();
+    public static Block ores = new BlockBaseOre();
+    public static Block storage = new BlockBaseStorage();
+    
+    public static BlockAlloyFurnace alloyfurnace = new BlockAlloyFurnace();
 
-    public static BlockProjectTable projectTable;
-    public static BlockElectricalFurnace electricalfurnace;
+    public static BlockProjectTable projectTable = new BlockProjectTable();
+    public static BlockElectricalFurnace electricalfurnace = new BlockElectricalFurnace();
 
-    public static BlockParticleBlock particle_block;
-    public static BlockConcrete concrete;
+    public static BlockParticleBlock particle_block = new BlockParticleBlock();
+    public static BlockConcrete concrete = new BlockConcrete();
 
-    public static BlockAsphalt asphalt;
+    public static BlockAsphalt asphalt = new BlockAsphalt();
 
-    public static BlockBaseOre ores;
-    public static BlockBaseStorage storage;
+    public static Block testStair = new BlockStairsBase(asphalt.getDefaultState(), "test_stair", true);
+    public static Block testSlabHalf = new BlockSlabBase(asphalt, "test_stair", true);
+    public static Block testWall = new BlockWallBase(asphalt, "test_stair", true);
+    
+    public static BlockCPU cpu = new BlockCPU();
 
-    public static BlockPipeBasic basic;
-    public static BlockPipeFluid fluid;
+    public static BlockDiskDrive disk_drive = new BlockDiskDrive();
+    public static BlockIOExpander io_expander = new BlockIOExpander();
 
-    public static BlockFutopiaStair subStairBlock;
-
-    public static BlockEngine engine;
-
-    public static void init() {
-        instantiateBlocks();
-        registerTE();
-    }
-
-    private static void instantiateBlocks() {
-
-        projectTable = new BlockProjectTable();
-        alloyfurnace = new BlockAlloyFurnace();
-
-        electricalfurnace = new BlockElectricalFurnace();
-        particle_block = new BlockParticleBlock();
-        concrete = new BlockConcrete();
-
-        ores = new BlockBaseOre();
-        storage = new BlockBaseStorage();
-
-        asphalt = new BlockAsphalt();
-
-    }
-
-    private static void registerTE() {
-        GameRegistry.registerTileEntity(TileAlloyFurnace.class, "tile_alloy_furnace");
+    public static BlockMonitor monitor = new BlockMonitor();
+    
+    static{
+    	GameRegistry.registerTileEntity(TileAlloyFurnace.class, "tile_alloy_furnace");
         GameRegistry.registerTileEntity(TileProjectTable.class, "tile_project_table");
-        GameRegistry.registerTileEntity(TileKinectGenerator.class, "tile_kinetic_generator");
+        GameRegistry.registerTileEntity(TileProjectTable.class, "tile_project_table");
+        GameRegistry.registerTileEntity(TileElectricalFurnace.class, "tile_electrical_furnace");
+//        GameRegistry.registerTileEntity(TileKinectGenerator.class, "tile_kinetic_generator");
     }
 
 }
