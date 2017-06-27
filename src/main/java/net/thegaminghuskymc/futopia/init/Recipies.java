@@ -13,21 +13,20 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 
-@ContentLoader(modid = Refs.MODID)
 public class Recipies {
 
     public static void init() {
-        addSawRecipes();
+        /*addSawRecipes();
         addHammerRecipes();
         addDustRecipes();
         addPlateRecipes();
         addBlockRecipes();
-        addItemRecipes();
+        addItemRecipes();*/
 //        addArmorRecipies();
 //        addToolRecipies();
     }
 
-    private static void addSawRecipes() {
+    /*private static void addSawRecipes() {
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.RED.ordinal()), "ingotRed");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BLUE.ordinal()), "ingotBlue");
         addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.PURPLE.ordinal()), "ingotPurple");
@@ -127,7 +126,7 @@ public class Recipies {
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
         addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), 0.0F);
-    }
+    }*/
 
     private static void addBlockRecipes() {
         /*CraftingManager.getInstance().addRecipe(new ShapedOreRecipe(new ItemStack(FTBlocks.particle_block), "RBG", "GRB", "BGR", 'B', "ingotBlue",
@@ -179,11 +178,11 @@ public class Recipies {
     }*/
 
     private static void addToolsetRecipe(Item[] toolset, String material) {
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[0]), " X ", " X ", " C ", 'X', material, 'C', FTItems.ironStick));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[1]), "XXX", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[2]), " X ", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[3]), "XX ", "XC ", " C ", 'X', material, 'C', FTItems.ironStick));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[4]), "XX ", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[0]), " X ", " X ", " C ", 'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[1]), "XXX", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[2]), " X ", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[3]), "XX ", "XC ", " C ", 'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(toolset[4]), "XX ", " C ", " C ", 'X', material, 'C', FTItems.ironStick));
     }
 
     private static void addGearRecipe(ItemStack gear, String material){
@@ -203,7 +202,7 @@ public class Recipies {
     }
 
     private static void addHammerRecipe(ItemStack hammers, String material){
-        GameRegistry.addRecipe(new ShapedOreRecipe(hammers, "XCX", "XCX", " C ",  'X', material, 'C', FTItems.ironStick));
+//        GameRegistry.addRecipe(new ShapedOreRecipe(hammers, "XCX", "XCX", " C ",  'X', material, 'C', FTItems.ironStick));
     }
 
     private static void addSawRecipe(ItemStack saws, String material){
@@ -322,87 +321,5 @@ public class Recipies {
             return true;
         }
     }
-
-    // SMELTING{
-    /*public static boolean addSmelting(ItemStack out, Item in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0);
-        return true;
-    }
-
-    public static boolean addSmelting(ItemStack out, Block in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0);
-        return true;
-    }
-
-    public static boolean addSmelting(ItemStack out, ItemStack in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0);
-        return true;
-    }
-
-    public static boolean addSmelting(ItemStack out, Item in, float XP) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
-        return true;
-    }
-
-    public static boolean addSmelting(ItemStack out, Block in, float XP) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
-        return true;
-    }
-
-    public static boolean addSmelting(ItemStack out, ItemStack in, float XP) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), XP);
-        return true;
-    }
-
-    public static boolean addWeakSmelting(ItemStack out, Item in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.1f);
-        return true;
-    }
-
-    public static boolean addWeakSmelting(ItemStack out, Block in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.1f);
-        return true;
-    }
-
-    public static boolean addWeakSmelting(ItemStack out, ItemStack in) {
-
-        if (out == null | in == null) {
-            return false;
-        }
-        FurnaceRecipes.instance().addSmeltingRecipe(cloneStack(in, 1), cloneStack(out), 0.1f);
-        return true;
-    }*/
 
 }

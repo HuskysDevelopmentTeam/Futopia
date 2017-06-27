@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.proxy;
 
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -28,6 +29,11 @@ public class CommonProxy implements IFutopiaProxy {
 	@Override
 	public boolean addIModelRegister(IModelRegister modelRegister) {
 		return false;
+	}
+
+	@Override
+	public TextureAtlasSprite getAnimatedTexture() {
+		return null;
 	}
 
 }

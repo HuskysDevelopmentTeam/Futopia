@@ -9,9 +9,17 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "0.2.0"
-group = "net.thegaminghuskymc.futopia"
-archivesBaseName = "futopia"
+ext.configFile = file('build.properties')
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
+}
+
+version = "${config.major_version}.${config.minor_version}.${config.build_number}"
+group= "net.thegaminghuskymc.futopia"
+archivesBaseName = config.mod_name
 
 sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
@@ -19,7 +27,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.0.2310"
+    version = "1.11.2-13.20.0.2315"
     runDir = "run"
     mappings = "snapshot_20161220"
 }
@@ -38,4 +46,33 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+jar {
+    classifier = 'universal'
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
+
+task srcJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task incrementBuildNumber() {
+    dependsOn "reobf"
+    doLast {
+        config.build_number = (config.build_number.toString().toInteger()) + 1
+        configFile.withWriter {
+            config.toProperties().store(it, "")
+        }
+    }
+}
+
+artifacts {
+    archives deobfJar
+    archives srcJar
 }

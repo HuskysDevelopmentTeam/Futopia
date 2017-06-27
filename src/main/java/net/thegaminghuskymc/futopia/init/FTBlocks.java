@@ -4,12 +4,16 @@ import keri.ninetaillib.lib.mod.ContentLoader;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.Refs;
-import net.thegaminghuskymc.futopia.blocks.BlockBaseOre;
-import net.thegaminghuskymc.futopia.blocks.BlockBaseStorage;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockCPU;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockDiskDrive;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockIOExpander;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitor;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockFabricator;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockQuartzCrystal;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockXycroniumBricks;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockXycroniumNetherOre;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockXycroniumOre;
+import net.thegaminghuskymc.futopia.blocks.idk.BlockXycroniumStorage;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockAlloyFurnace;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockElectricalFurnace;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockParticleBlock;
@@ -19,16 +23,16 @@ import net.thegaminghuskymc.futopia.blocks.normal.BlockSlabBase;
 import net.thegaminghuskymc.futopia.blocks.normal.BlockStairsBase;
 import net.thegaminghuskymc.futopia.blocks.normal.BlockWallBase;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockAsphalt;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOre;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseStorage;
 import net.thegaminghuskymc.futopia.tiles.TileAlloyFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileElectricalFurnace;
+import net.thegaminghuskymc.futopia.tiles.TileEntityFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileProjectTable;
 
 @ContentLoader(modid = Refs.MODID)
 public class FTBlocks {
 
-//    public static Block table = new BlockTable();
-//    public static Block engine = new BlockEngine();
-//    public static Block cable = new BlockCable();
     public static Block ores = new BlockBaseOre();
     public static Block storage = new BlockBaseStorage();
     
@@ -53,11 +57,18 @@ public class FTBlocks {
 
     public static BlockMonitor monitor = new BlockMonitor();
     
+    /*public static Block xycroniumOre = new BlockXycroniumOre();
+    public static Block xycroniumNetherOre = new BlockXycroniumNetherOre();
+    public static Block xycroniumStorage = new BlockXycroniumStorage();
+    public static Block xycroniumBricks = new BlockXycroniumBricks();
+    public static Block quartzCrystal = new BlockQuartzCrystal();
+    public static Block fabricator = new BlockFabricator();*/
+    
     static{
     	GameRegistry.registerTileEntity(TileAlloyFurnace.class, "tile_alloy_furnace");
         GameRegistry.registerTileEntity(TileProjectTable.class, "tile_project_table");
-        GameRegistry.registerTileEntity(TileProjectTable.class, "tile_project_table");
         GameRegistry.registerTileEntity(TileElectricalFurnace.class, "tile_electrical_furnace");
+        GameRegistry.registerTileEntity(TileEntityFurnace.class, "tile_furnace");
 //        GameRegistry.registerTileEntity(TileKinectGenerator.class, "tile_kinetic_generator");
     }
 

@@ -29,7 +29,7 @@ public class FTItems {
 	public static ToolMaterial toolMaterialTungsten = EnumHelper.addToolMaterial("tungsten", 2, 700, 6.1F, 2.1F, 15);
 	public static ToolMaterial toolMaterialZinc = EnumHelper.addToolMaterial("zinc", 2, 700, 6.1F, 2.1F, 15);
 
-    public static Item saw = new ItemSaw();
+    /*public static Item saw = new ItemSaw();
     public static Item hammer = new ItemHammer();
     public static Item windows_washer = new ItemWindowsWasher();
     public static Item meteor_spawner = new ItemMeteorSpawner();
@@ -40,13 +40,6 @@ public class FTItems {
     public static Item plates = new ItemBasePlate();
     public static Item shards = new ItemBaseShard();
     public static ItemIronStick ironStick = new ItemIronStick();
-    public static ItemStele stele = new ItemStele();
-    
-    public static ItemGlowingSword glowing_sword_blue = new ItemGlowingSword("glowing_sword_blue", toolMaterialBlue);
-    public static ItemGlowingSword glowing_sword_green = new ItemGlowingSword("glowing_sword_green", toolMaterialGreen);
-    public static ItemGlowingSword glowing_sword_red = new ItemGlowingSword("glowing_sword_red", toolMaterialRed);
-    public static ItemGlowingSword glowing_sword_purple = new ItemGlowingSword("glowing_sword_purple", toolMaterialPurple);
-    public static ItemGlowingSword glowing_sword_tungsten = new ItemGlowingSword("glowing_sword_tungsten", toolMaterialTungsten);
-    public static ItemGlowingSword glowing_sword_zinc = new ItemGlowingSword("glowing_sword_zinc", toolMaterialZinc);
+    public static ItemStele stele = new ItemStele();*/
 
 }

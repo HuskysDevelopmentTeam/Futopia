@@ -1,4 +1,4 @@
-package net.thegaminghuskymc.futopia.blocks;
+package net.thegaminghuskymc.futopia.blocks.worldgen;
 
 import com.google.common.collect.Lists;
 

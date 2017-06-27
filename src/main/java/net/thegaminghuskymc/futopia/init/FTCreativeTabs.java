@@ -28,10 +28,14 @@ public class FTCreativeTabs {
         };
 
         materials = new CreativeTabs("materials") {
-            @Override
+            /*@Override
             public ItemStack getTabIconItem() {
                 return new ItemStack(FTItems.plates.setFull3D());
-            }
+            }*/
+        	@Override
+        	public ItemStack getTabIconItem() {
+        		return null;
+        	}
         };
 
         tools = new CreativeTabs("tools") {
